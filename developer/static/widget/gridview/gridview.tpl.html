@@ -1,0 +1,18 @@
+
+		<table border-space="0" class="bi-gridview-table" >
+			<thead >
+				<tr>
+				<td v-repeat="thead:grid.thead" class="{{thead.className}}">{{thead.text}}</td>
+				<!--<td class="gridview-col-action">操作</td>-->		 
+			</tr>
+			</thead>
+			<tbody >
+			<tr v-repeat="tr:grid.data" v-on="click:viewClick(this,$event)">
+				{{tbody}}	 
+				</tr>
+				 
+			</tbody>
+		</table>	
+		<div class="page-box ">
+            <ol class="ep-pages  j_gridViewPage"></ol>
+        </div>

@@ -1,0 +1,35 @@
+/*搜索表单的相关样式，ex：实时业务监控*/
+.page-wrap{
+    padding:30px 20px;
+}
+.page-title01{
+   font-size: 16px;
+  height: 16px;
+  line-height: 16px;
+  vertical-align: top;
+  font-weight: 700;
+}
+.page-title01:before{
+    content: " ";display: inline-block;width:5px;height:inherit;background-color: #ff8c03;margin-right: 5px;
+}
+.filter-wrap{min-height: 60px;border-bottom:#f5f4f4 1px solid;margin-bottom: 35px;padding-bottom: 35px;}
+.filter-box{min-height: 60px;padding:30px 0 0 0;line-height: 30px;background-color: transparent;}
+.filter-box .filter-item-box01{display: inline-block;height:30px;margin:0 40px 20px 0;max-width: 260px;box-sizing:border-box;min-width:150px;}
+.filter-item-box01 label{color:#666;}
+.filter-select,.filter-input{max-width: 200px;
+    padding-left: 10px;
+  min-width: 150px;
+  height: 30px;
+  box-sizing: border-box;
+  border: 1px solid #ECEBEB;
+  border-radius: 3px;
+  color: #999;}
+.data-legend-box{height:22px;position: relative;}
+.data-legend-box label{display: inline-block;}
+.legend-label{margin-right: 25px;line-height: 22px;font-size: 12px;vertical-align: middle;}
+.filter-checkbox{margin: -3px 10px 0 0;vertical-align: middle;}
+.legend-display{display: inline-block;height:10px; width: 10px;border-radius: 5px;margin-right: 5px;}
+.orange-legend{background-color: #ffbd66;}
+.red-legend{background-color: #ff6c6c;}
+.green-legend{background-color: #95e257;}
+.data-info-tips{position: absolute;right: 0;top: 0;}

@@ -1,0 +1,78 @@
+ 
+.banner-box{   height: 55px;
+  line-height: 30px;
+  padding: 0;
+  margin: 0 130px 0 250px;
+  font-size: 16px; 
+   -moz-transition: top 0.5s ease-in 0s;  
+    -webkit-transition: top 0.5s ease-in 0s;  
+    -o-transition: top 0.5s ease-in  0s;  
+    transition: top 0.5s ease-in  0s;
+  top:25px;
+  position:absolute;
+  background-color: #FFF;
+    z-index: 200;
+    width:-moz-calc(100% - 150px - 250px);
+  width:-webkit-calc(100% - 150px - 250px);
+    width: calc(100% - 150px - 250px);
+  }
+.banner-box-p{z-index: 250;}
+.hide-banner-box{top:-100px;}
+.user-box{float: right;height: 30px;line-height: 30px;cursor:pointer;}
+.user-box:hover{color: #FF8903;;}
+.user-info-list{position: absolute;font-size:12px;
+  top: 30px;
+  right: -5px;
+  background: #FFF;
+  width: 100px;
+  border: 1px solid #E3E3E3;
+  z-index: 5000;
+  text-align: center;}
+ .user-info-list .user-info-item{height: 30px;  border-bottom: 1px solid #E3E3E3;  padding: 5px 10px;overflow:hide;  }
+ .user-info-list .user-info-item a{display:block;height:inherit;}
+.banner-box li{display: inline-block;margin-right: 35px;text-align: center;height: inherit;position: relative; }
+.banner-box .banner-link-box{}
+.banner-link-box:hover,.banner-link-box.banner-active{cursor: pointer;color:#ff8903;}
+
+
+.banner-item-box{
+    position: absolute;
+    top: 80px;
+    left:210px;
+    z-index: 500;
+}
+#bannerBox .banner-item-list{position:absolute;background-color: #fff;box-sizing: border-box;border:1px solid #e3e3e3; border-top:3px solid #ff8903;padding: 8px 0px;margin: 0;display: flex;top:55px;left:-42px;
+}
+#bannerBox a{color:inherit;text-decoration:none;}
+#bannerBox a:hover{color:#FF8903;}
+#bannerBox dt,#bannerBox dd {
+  line-height: inherit;
+}
+.banner-item-list .banner-item-link{line-height: 30px;height:30px;overflow: hidden;display: block;font-weight:700;font-size: 14px;width:140px;text-align: left;padding: 0 0 0 25px;
+    box-sizing: border-box;}
+.banner-item-link-box{flex: auto;text-align: left;}
+.banner-item-link a{display: block;height:100%;}
+.icon-arrow-top:before{content: " ";
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -6px;
+    left: 60px;
+    border-top: 0 solid #FF8907;
+    border-right: 3px solid rgba(0, 0, 0, 0);
+    border-bottom: 3px solid #FF8907;
+    border-left: 3px solid rgba(0, 0, 0, 0);}
+.banner-link-box{height:55px;}
+a.banner-link-box{color:#666;}
+
+
+.banner-item-list li{padding-left:25px;width: 140px;    box-sizing: border-box;}
+.banner-item-list-b li{float: left;width: 50%;box-sizing: border-box;}
+.banner-item-link-box .banner-item-title{font-size: 14px;margin:3px 0;font-weight:700;}
+.banner-item-list .banner-item-link-s{font-size: 12px;display: block;    line-height: 24px;height:24px;font-weight:500;color: #888;}
+.index-item-page-bg{background-repeat: no-repeat;
+        background-size:cover;
+        height:inherit;
+        background-color: #fff;
+        margin:10px;
+}
