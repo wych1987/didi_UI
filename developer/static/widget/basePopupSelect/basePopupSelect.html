@@ -1,14 +1,14 @@
-<div class="dd-citylist" id="dd_cityList" v-class="hide:isHide">
-<div class="dd-city-group-wrap flex-box-row">
-	<ul class="dd-city-group " v-on="click:groupClick($event)">
-		<li v-repeat="g:group" title="{{g.name}}" v-attr="data-id:g.id,data-name:g.name" v-class="dd-city-group-active:showGroup==g.name">{{g.name}}</li>
+<div class="dd-popupSelect" id="dd-basePopupSelect" v-class="hide:isHide">
+<div class="dd-popupSelect-group-wrap flex-box-row">
+	<ul class="dd-popupSelect-group " v-on="click:groupClick($event)">
+		<li v-repeat="g:group" title="{{g.name}}" v-attr="data-id:g.id,data-name:g.name" v-class="dd-popupSelect-group-active:showGroup==g.name">{{g.name}}</li>
 	</ul>
-	<ul class="dd-city-item-wrap flex-box-1" v-on="click:itemBoxClick($event)">
+	<ul class="dd-popupSelect-item-wrap flex-box-1" v-on="click:itemBoxClick($event)">
 			<li v-repeat="it:showList">
-				<h5 class="dd-city-item-title">{{it.title}}</h5>
-				<div class="dd-city-item-box">
-					<label class="dd-city-item-label" v-repeat="item:it.item">
-						<input type="radio" name="dd_city" v-model="selected" value="{{item.value}}" v-attr="data-name:item.name"><span>{{item.name}}</span>
+				<h5 class="dd-popupSelect-item-title" v-if="it.title">{{it.title}}</h5>
+				<div class="dd-popupSelect-item-box">
+					<label class="dd-popupSelect-item-label" v-repeat="item:it.item">
+						<input type="radio" name="popupSelect" v-model="selected" value="{{item.value}}" v-attr="data-name:item.name"><span>{{item.name}}</span>
 					</label>
 					<!--
 					<label class="dd-city-item-label">
@@ -37,8 +37,8 @@
 			</li>
 	</ul>
 	</div>
-	<div class="dd-city-btn-box">
-		<label class="dd-city-all"><input type="radio" value="xx"><span>全国</span></label>	
+	<div class="dd-popupSelect-btn-box">
+		<label class="dd-popupSelect-all"><input type="radio" value="xx"><span>全国</span></label>	
 	 	<input type="button" value="取消" class="dd-btn-cancel dd-btn02 right" v-on="click:cancelClick"/>
 	  	<input type="button" value="确定" class="dd-btn dd-btn02 right" v-on="click:okClick"/>
 	</div>	

@@ -79,3 +79,4 @@ fis.config.set('roadmap.path', [
 		}
 	]);
 	//fis release -m -p -d D:\xampp\htdocs\fisOutput
+	//fis release -m -p -d F:\xampp\htdocs\didiUI
