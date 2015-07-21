@@ -1,5 +1,6 @@
 var o = {}
 var tpl = __inline("basePopupSelect.html");
+var myTool = require("myTool");
 //var dd_cityList = $("#popupSelect");
 $(document).ready(function(){
  		$("body").append(tpl);
@@ -23,28 +24,22 @@ $(document).ready(function(){
 	}
 
 */
-
+var popupSelect_vue={};
 function init(){
-		var popupSelect_vue = new Vue({
-		el:"#dd-basePopupSelect",
+
+		 popupSelect_vue = new Vue({
+		el:"#ddui-basePopupSelect",
 		data:{
-			isHide:false,
-			selected:"12q",
+			top:0,
+			left:0,
+			ownEvent:"popupSelect_OK",
+			isHide:true,
+			selected:"",
 			type:'radio',
-			group:[
-			{name:"北京大区",id:123},
-			{name:"上海大区",id:123},
-			{name:"广州大区",id:123},
-			{name:"武汉大区",id:123},
-			{name:"沈阳地区",id:123}
-			],
-			showGroup:"武汉大区",
-			showList:[
-			{title:"A",item:[{name:"鞍山市",value:"12q"},{name:"鞍山市1",value:"112a"}]},
-			{title:"B",item:[{name:"鞍山市",value:"12s"},{name:"鞍山市1",value:"11s2"}]},
-			{title:"C",item:[{name:"鞍山市",value:"12x"},{name:"鞍山市1",value:"112c"},{name:"鞍山市",value:"12f"},{name:"鞍山市1",value:"1g2"},{name:"鞍山市",value:"12h"},{name:"鞍山市y1",value:"112o"},{name:"鞍山市",value:"1i2"},{name:"鞍山市1",value:"1m12"}]},
-			{title:"D",item:[{name:"鞍山市",value:"12c"},{name:"鞍山市1",value:"112v"}]}
-			]
+			group:[],
+			showGroup:"",
+			showList:[],
+			groupData:{}
 	},
 	"methods":{
 		groupClick:function(event){
@@ -57,14 +52,18 @@ function init(){
 		itemBoxClick:function(event){
 			var ele = event.target;
 			//input点击
-			var self = this;
-			setTimeout(function(){
-				self.isHide=true;
-			},300);//延时一下让用户有视觉反应
+			if(ele.nodeName.toLowerCase()==='input'){
+				if(this.type==='radio'){
+					//this.selected=ele.value;
+ 					okBtnClick(ele);
+				}else{
+
+				}		
+			}
 		},
 		okClick:function(){
 			//确认按钮点击
-			this.isHide=true;
+			 okBtnClick();
 		},
 		cancelClick:function(){
 			//取消按钮的点击
@@ -73,30 +72,87 @@ function init(){
 	},
 	"watch":{
 		"showGroup":function(val){
-				this.showList=groupData[val]||[];
+				this.showList=this.groupData[val]||[];
 		},
 		"isHide":function(val){
 			if(!val){
-				this.data={};
+				this.data={
+					top:0,
+					left:0,
+					isHide:false,
+					selected:"",
+					type:'radio',
+					group:[],
+					showGroup:"",
+					showList:[],
+					groupData:{}
+				};
 			}
 		}	
 	}
 });
- return popupSelect_vue;
+ 
 }
-var groupData ={
-	"武汉大区":[
-			{title:"A",item:[{name:"鞍山市",value:"12"},{name:"鞍山市1",value:"112"}]},
-			{title:"B",item:[{name:"鞍山市",value:"12"},{name:"鞍山市1",value:"112"}]},
-			{title:"C",item:[{name:"鞍山市",value:"12"},{name:"鞍山市1",value:"112"},{name:"鞍山市",value:"12"},{name:"鞍山市1",value:"112"},{name:"鞍山市",value:"12"},{name:"鞍山市1",value:"112"},{name:"鞍山市",value:"12"},{name:"鞍山市1",value:"112"}]},
-			{title:"D",item:[{name:"鞍山市",value:"12"},{name:"鞍山市1",value:"112"}]}
-			],
-		"上海大区":[
-			{title:"AA",item:[{name:"鞍山市",value:"12"},{name:"鞍山市1",value:"112"}]},
-			{title:"VV",item:[{name:"鞍山市",value:"12"},{name:"鞍山市1",value:"112"}]},
-			{title:"CC",item:[{name:"鞍山市",value:"12"},{name:"鞍山市1",value:"112"},{name:"鞍山市",value:"12"},{name:"鞍山市1",value:"112"},{name:"鞍山市",value:"12"},{name:"鞍山市1",value:"112"},{name:"鞍山市",value:"12"},{name:"鞍山市1",value:"112"}]},
-			{title:"DQ",item:[{name:"鞍山市",value:"12"},{name:"鞍山市1",value:"112"}]}
-			],
+function okBtnClick(ele){//v=vue
+	//触发自定义事件v.ownEvent
+	//o.selectData=v.selected;
+	if(ele){
+		o.selectData={
+	id:[ele.value],
+	name:[ele.getAttribute("data-name")]
+};
+	}else{
+		getAllSelected();
+	}
+	
+	myTool.myEvent.trigger(document,popupSelect_vue.ownEvent);
+	close()
+}
+/*
+打开弹层，param里主要是data的数据
 
+*/
+function open(param){
+	param.isHide=false;
+	setOption(param);
 }
+function setOption(param){
+	for(var key in param){
+		if(popupSelect_vue.$data.hasOwnProperty(key)){
+			popupSelect_vue[key]=param[key];
+		}
+	}
+	myTool.myEvent.init(popupSelect_vue.ownEvent);
+}
+function close(){
+	setTimeout(function(){
+				popupSelect_vue.isHide=true;
+			},100);//延时一下让用户有视觉反应
+}
+function getAllSelected(){
+	o.selectData={
+	id:[],
+	name:[]
+};
+	if(popupSelect_vue.type==="radio"){
+		o.selectData.id=[popupSelect_vue.selected];
+	}else{
+		for(var key in popupSelect_vue.groupData){
+			var t = popupSelect_vue.groupData[key];
+			t.forEach(function(v){
+				v.item.forEach(function(item){
+					if(item.selected){
+						o.selectData.id.push(item.value);
+						o.selectData.name.push(item.name);
+					}
+				})
+			})
+		}		
+	}
+}
+o.open = open;
+o.selectData={
+	id:[],
+	name:[]
+};
 module.exports=o;

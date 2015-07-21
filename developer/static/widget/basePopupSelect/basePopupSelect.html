@@ -1,13 +1,14 @@
-<div class="dd-popupSelect" id="dd-basePopupSelect" v-class="hide:isHide">
-<div class="dd-popupSelect-group-wrap flex-box-row">
-	<ul class="dd-popupSelect-group " v-on="click:groupClick($event)">
-		<li v-repeat="g:group" title="{{g.name}}" v-attr="data-id:g.id,data-name:g.name" v-class="dd-popupSelect-group-active:showGroup==g.name">{{g.name}}</li>
+<div class="ddui-popupSelect" id="ddui-basePopupSelect" v-class="hide:isHide" v-style="top: top + 'px',
+  left: left + 'px'">
+<div class="ddui-popupSelect-group-wrap flex-box-row">
+	<ul class="ddui-popupSelect-group " v-on="click:groupClick($event)">
+		<li v-repeat="g:group" title="{{g.name}}" v-attr="data-id:g.id,data-name:g.name" v-class="ddui-popupSelect-group-active:showGroup==g.name">{{g.name}}</li>
 	</ul>
-	<ul class="dd-popupSelect-item-wrap flex-box-1" v-on="click:itemBoxClick($event)">
+	<ul class="ddui-popupSelect-item-wrap flex-box-1" v-on="click:itemBoxClick($event)">
 			<li v-repeat="it:showList">
-				<h5 class="dd-popupSelect-item-title" v-if="it.title">{{it.title}}</h5>
-				<div class="dd-popupSelect-item-box">
-					<label class="dd-popupSelect-item-label" v-repeat="item:it.item">
+				<h5 class="ddui-popupSelect-item-title" v-if="it.title">{{it.title}}</h5>
+				<div class="ddui-popupSelect-item-box">
+					<label class="ddui-popupSelect-item-label" v-repeat="item:it.item">
 						<template v-if="type=='radio'">
 						<input type="radio" name="popupSelect" v-model="selected" value="{{item.value}}" v-attr="data-name:item.name"><span>{{item.name}}</span>
 						</template>
@@ -17,25 +18,25 @@
 
 					</label>
 					<!--
-					<label class="dd-city-item-label">
+					<label class="ddui-city-item-label">
 						<input type="radio" value="xx" ><span>北京市</span>
 					</label>
-					<label class="dd-city-item-label">
+					<label class="ddui-city-item-label">
 						<input type="radio" value="xx" ><span>北京市</span>
 					</label>
-					<label class="dd-city-item-label">
+					<label class="ddui-city-item-label">
 						<input type="radio" value="xx" ><span>北京市</span>
 					</label>
-					<label class="dd-city-item-label">
+					<label class="ddui-city-item-label">
 						<input type="radio" value="xx" ><span>北京市</span>
 					</label>
-					<label class="dd-city-item-label">
+					<label class="ddui-city-item-label">
 						<input type="radio" value="xx" ><span>北京市</span>
 					</label>
-					<label class="dd-city-item-label">
+					<label class="ddui-city-item-label">
 						<input type="radio" value="xx" ><span>北京市</span>
 					</label>
-					<label class="dd-city-item-label">
+					<label class="ddui-city-item-label">
 						<input type="radio" value="xx" ><span>北京市</span>
 					</label>
 					-->
@@ -43,9 +44,9 @@
 			</li>
 	</ul>
 	</div>
-	<div class="dd-popupSelect-btn-box">
-		<label class="dd-popupSelect-all"><input type="radio" value="xx"><span>全国</span></label>	
-	 	<input type="button" value="取消" class="dd-btn-cancel dd-btn02 right" v-on="click:cancelClick"/>
-	  	<input type="button" value="确定" class="dd-btn dd-btn02 right" v-on="click:okClick"/>
+	<div class="ddui-popupSelect-btn-box">
+		<label class="ddui-popupSelect-all"><input type="radio" value="xx"><span>全国</span></label>	
+	 	<input type="button" value="取消" class="ddui-btn-cancel ddui-btn02 right" v-on="click:cancelClick"/>
+	  	<input type="button" value="确定" class="ddui-btn ddui-btn02 right" v-on="click:okClick"/>
 	</div>	
 </div>
