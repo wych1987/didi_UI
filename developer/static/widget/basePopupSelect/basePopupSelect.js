@@ -103,8 +103,7 @@ function okBtnClick(ele){//v=vue
 };
 	}else{
 		getAllSelected();
-	}
-	
+	}	
 	myTool.myEvent.trigger(document,popupSelect_vue.ownEvent);
 	close()
 }
@@ -121,6 +120,9 @@ function setOption(param){
 		if(popupSelect_vue.$data.hasOwnProperty(key)){
 			popupSelect_vue[key]=param[key];
 		}
+	}
+	if(!popupSelect_vue.showGroup){
+		popupSelect_vue.showGroup=popupSelect_vue.group[0].name;
 	}
 	myTool.myEvent.init(popupSelect_vue.ownEvent);
 }

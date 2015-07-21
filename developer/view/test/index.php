@@ -4337,7 +4337,13 @@ include("../layout/header.php");
 		}
 	]
 }
-
+	var myTool = require("myTool");
 	var cityList = require("cityList");
-	cityList.init({ele:$("#cityInput")});
+	myTool.myEvent.on(document,cityList.first_data.event,function(){
+	 	alert(cityList.first_data.city_id);
+	 })
+	cityList.init({ele:$("#cityInput"),okBtnCallback:function(id){
+		alert(id);
+	}});
+	
 	</script>
