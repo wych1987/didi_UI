@@ -8,7 +8,13 @@
 				<h5 class="dd-popupSelect-item-title" v-if="it.title">{{it.title}}</h5>
 				<div class="dd-popupSelect-item-box">
 					<label class="dd-popupSelect-item-label" v-repeat="item:it.item">
+						<template v-if="type=='radio'">
 						<input type="radio" name="popupSelect" v-model="selected" value="{{item.value}}" v-attr="data-name:item.name"><span>{{item.name}}</span>
+						</template>
+						<template v-if="type=='checkbox'">
+						<input type="checkbox" name="popupSelect" v-model="item.selected" value="{{item.value}}" v-attr="data-name:item.name"><span>{{item.name}}</span>
+						</template>
+
 					</label>
 					<!--
 					<label class="dd-city-item-label">
