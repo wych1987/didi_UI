@@ -12,7 +12,7 @@ var first_data = {
 var conf_popup = {
 	ownEvent : "cityList_ok",
 	selected : "",
-	type : 'radio',
+	type : 'checkbox',
 	group : [],
 	showGroup : "",
 	showList : [],
@@ -51,9 +51,9 @@ function init(param) {
 	});
 }
 function okBtnClick(data) {	 
-		cityInput.val(data.name.join(","));
+		cityInput.val(data.name.join(";"));
 		if(typeof okBtnCallback==="function"){
-			okBtnCallback(data.id.join(","));
+			okBtnCallback(data.id.join(";"));
 		}
 }
 function formatCityData(data) {

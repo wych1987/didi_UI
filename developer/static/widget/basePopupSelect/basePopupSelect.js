@@ -60,6 +60,10 @@ function init(){
 		groupClick:function(event){
 			var ele = event.target;
 			var g_name = ele.getAttribute("data-name");
+
+			if(ele.type==="checkbox"){
+				groupBoxSetByChecked(this.groupData[g_name],ele.checked);
+			}
 			if(g_name&&this.showGroup!=g_name){
 				this.showGroup=g_name;
 			}
@@ -68,11 +72,17 @@ function init(){
 			var ele = event.target;
 			//input点击
 			if(ele.nodeName.toLowerCase()==='input'){
-				if(this.type==='radio'){
+				if(ele.type==='radio'){
 					//this.selected=ele.value;
  					okBtnClick(ele);
-				}else{
-
+				}else if(ele.type==="checkbox"&&!ele.checked){
+						 var g_name = this.showGroup;
+						 this.group.forEach(function(v){
+						 	if(v.name===g_name){
+						 		v.selected=false;
+						 		return ;
+						 	}
+						 })
 				}		
 			}
 		},
@@ -136,6 +146,13 @@ function okBtnClick(ele) { //v=vue
 	myTool.myEvent.trigger(document, popupSelect_vue.ownEvent);
 	close()
 }
+function groupBoxSetByChecked(arr,checked){
+	arr.forEach(function(v){
+		v.item.forEach(function(g){
+			g.selected=checked;
+		})
+	})
+}
 /*
 打开弹层，param里主要是data的数据
 ids=>选中的id串，array
@@ -174,14 +191,15 @@ function setSelectedEleByIds(ids){
 			for(var k in popupSelect_vue.groupData ){
 				var g = popupSelect_vue.groupData[k];
 				g.forEach(function(it){
-					it.item.forEach(function(t){
-						it.selected = ids_key[it.value]?true:false;
+					it.item.forEach(function(q){
+						q.selected = ids_key[q.value]?true:false;
 					})
 				})
 				}
 				
 			}
 		}
+		popupSelect_vue.showList=popupSelect_vue.groupData[popupSelect_vue.showGroup];
 	}
 
 function close(){

@@ -13,7 +13,7 @@
 .ddui-popupSelect-item-title{height:20px;background-color: #fafafa;line-height: 20px;text-indent: 1em;}
 .ddui-popupSelect-item-box{line-height: 24px;padding-left: 1em;}
 .ddui-popupSelect-item-box .ddui-popupSelect-item-label{min-width: 65px;display: inline-block;box-sizing:border-box;margin-right: 5px;height:24px;}
-.ddui-popupSelect-item-label input,.ddui-popupSelect-all input{margin-right: 5px;vertical-align: middle;margin-top: -2px;}
+.ddui-popupSelect-item-label input,.ddui-popupSelect-all input,.ddui-popupSelect-group input{margin-right: 5px;vertical-align: middle;margin-top: -2px;}
 .ddui-popupSelect-btn-box{height:38px;border-top: 1px solid #f0f0f0; padding: 6px 0;box-sizing:border-box;}
 .ddui-popupSelect .ddui-popupSelect-all{margin-left: 15px;display: inline-block;vertical-align: middle;}
 .con-body{height: 800px;}
