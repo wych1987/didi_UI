@@ -75,7 +75,7 @@ function init(){
 				this.showList=this.groupData[val]||[];
 		},
 		"isHide":function(val){
-			if(!val){
+			if(val){
 				this.data={
 					top:0,
 					left:0,
@@ -109,11 +109,13 @@ function okBtnClick(ele){//v=vue
 }
 /*
 打开弹层，param里主要是data的数据
-
+ids=>选中的id串，array
 */
-function open(param){
-	param.isHide=false;
+function open(param,ids){
+	param.isHide=true;
 	setOption(param);
+	setSelectedEleByIds(ids);
+	popupSelect_vue.isHide=false;
 }
 function setOption(param){
 	for(var key in param){
@@ -124,7 +126,25 @@ function setOption(param){
 	if(!popupSelect_vue.showGroup){
 		popupSelect_vue.showGroup=popupSelect_vue.group[0].name;
 	}
+	
 	myTool.myEvent.init(popupSelect_vue.ownEvent);
+}
+function setSelectedEleByIds(ids){
+	if(ids){
+		if(popupSelect_vue.type==="radio"){
+			popupSelect_vue.selected=ids[0];
+		}else if(popupSelect_vue.type==="checkbox"){
+			var ids_key = {};
+			ids.forEach(function(v){
+				ids_key[v]=true;
+			});
+			popupSelect_vue.groupData.forEach(function(g){
+				g.item.forEach(function(it){
+					it.selected = ids_key[it.value]?true:false;
+				});
+			})
+		}
+	}
 }
 function close(){
 	setTimeout(function(){

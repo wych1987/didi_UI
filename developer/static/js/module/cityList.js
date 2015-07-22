@@ -31,10 +31,15 @@ function init(param) {
 		var offset = param.ele.offset();
 		conf_popup.left = offset.left;
 		conf_popup.top = offset.top + param.ele.outerHeight();
-		basePopupSelect.open(conf_popup);
+		var selectName = param.ele.val();
+		 selectName = selectName.length?selectName.split(";"):"";
+		 if(selectName){
+		 	var ids = getCityIdsByName(selectName);
+		 }
+		basePopupSelect.open(conf_popup,ids);
 	});
 	myTool.myEvent.on(document, conf_popup.ownEvent, function () {
-		console.log(basePopupSelect);
+		//console.log(basePopupSelect);
 		okBtnClick(basePopupSelect.selectData);
 	});
 }

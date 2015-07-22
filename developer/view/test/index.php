@@ -4341,7 +4341,7 @@ include("../layout/header.php");
 	var cityList = require("cityList");
 	myTool.myEvent.on(document,cityList.first_data.event,function(){
 	 	alert(cityList.first_data.city_id);
-	 })
+	 });
 	cityList.init({ele:$("#cityInput"),okBtnCallback:function(id){
 		alert(id);
 	}});
