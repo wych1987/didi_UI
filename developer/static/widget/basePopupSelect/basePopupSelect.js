@@ -233,6 +233,7 @@ function getAllSelected() {
 	}
 }
 o.open = open;
+o.close = close;
 o.selectData={
 	id:[],
 	name:[]

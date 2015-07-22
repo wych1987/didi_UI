@@ -2,6 +2,7 @@
 include("../layout/header.php");
 ?>
 <input id="cityInput" type="text" style="margin:50px;"/>
+<script type="text/javascript" src="/static/libs/jqueryUI/autoComplate.min.js"></script>
   <!--SCRIPT_PLACEHOLDER-->
 <!--RESOURCEMAP_PLACEHOLDER-->
 	<script>

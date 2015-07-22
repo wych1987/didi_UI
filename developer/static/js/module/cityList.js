@@ -3,7 +3,7 @@ var basePopupSelect = require("basePopupSelect");
 var myTool = require("myTool");
 var cityName_Map = {}; //城市name=>data
 var cityId_Map = {}; //城市id=>data
-
+var autoData=[];//自动填充的数据，存放城市名称
 var first_data = {
 	event:"cityData_ready",
 	city_id : "",
@@ -49,6 +49,10 @@ function init(param) {
 		//console.log(basePopupSelect);
 		okBtnClick(basePopupSelect.selectData);
 	});
+	myTool.bindAutoComplate(param.ele,autoData);
+	param.ele.on("keydown",function(){
+		basePopupSelect.close();
+	})
 }
 function okBtnClick(data) {	 
 		cityInput.val(data.name.join(";"));
@@ -72,6 +76,7 @@ function formatCityData(data) {
 			conf_popup.other.name="全国";
 			conf_popup.other.value=v.id;
 			conf_popup.other.selected=false;
+			autoData.push(v.name);
 		} else {
 			conf_popup.group.push({
 				name : v.name,
@@ -86,7 +91,7 @@ function formatCityData(data) {
 				var sortCode = "";
 				var list = {};
 				v.city.forEach(function (city) {
-
+					autoData.push(city.city_name);
 					if (!first_data.city_id) {
 						first_data.city_id = city.city_id;
 						first_data.city_name = city.city_name;
@@ -147,7 +152,10 @@ function getCityIdsByName(name) {
 	  var a = [];
 	   if(Array.isArray(name)){
 	   		name.forEach(function(v){
-	   			a.push(cityName_Map[v].city_id);
+	   			if(cityName_Map[v]){
+	   				a.push(cityName_Map[v].city_id);
+	   			}
+	   			
 	   		})	   		
 	   }else{
 	   	a.push(cityName_Map[name].city_id)
