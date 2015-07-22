@@ -16,7 +16,12 @@ var conf_popup = {
 	group : [],
 	showGroup : "",
 	showList : [],
-	groupData : {}
+	groupData : {},
+	other:{
+				name:"",
+				value:"",
+				selected:false
+			}
 }
 myTool.myEvent.init(first_data.event);
 var cityInput = {};
@@ -35,7 +40,9 @@ function init(param) {
 		 selectName = selectName.length?selectName.split(";"):"";
 		 if(selectName){
 		 	var ids = getCityIdsByName(selectName);
+		 	conf_popup.showGroup = cityName_Map[selectName[0]].parent;
 		 }
+		 
 		basePopupSelect.open(conf_popup,ids);
 	});
 	myTool.myEvent.on(document, conf_popup.ownEvent, function () {
@@ -62,7 +69,9 @@ function formatCityData(data) {
 			cityId_Map[v.id] = {
 				city_id : v.name
 			};
-
+			conf_popup.other.name="全国";
+			conf_popup.other.value=v.id;
+			conf_popup.other.selected=false;
 		} else {
 			conf_popup.group.push({
 				name : v.name,
@@ -105,7 +114,9 @@ function formatCityData(data) {
 						});
 					}
 					cityName_Map[city.city_name] = city;
+					cityName_Map[city.city_name].parent = v.name;
 					cityId_Map[city.city_id] = city;
+					cityId_Map[city.city_id].parent = v.name;
 				});
 			}
 		}

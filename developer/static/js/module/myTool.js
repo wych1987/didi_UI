@@ -15,5 +15,8 @@ var o = {}
 		myEvent.trigger=function(ele,eventName){
 			ele.dispatchEvent(myEvent.eventList[eventName])
 		};
+function deepClone(){
+	
+}		
 o.myEvent = myEvent;		
 module.exports=o;
