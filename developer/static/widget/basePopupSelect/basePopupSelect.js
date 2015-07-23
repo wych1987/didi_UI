@@ -173,8 +173,11 @@ function setOption(param){
 	if(!popupSelect_vue.showGroup){
 		popupSelect_vue.showGroup=popupSelect_vue.group[0].name;
 	}
-	popupSelect_vue.showList=popupSelect_vue.groupData[popupSelect_vue.showGroup];
-	myTool.myEvent.init(popupSelect_vue.ownEvent);
+	popupSelect_vue.type=param.type||"radio";
+	popupSelect_vue.ownEvent=param.ownEvent||"cityList_ok";
+	popupSelect_vue.showList=popupSelect_vue.groupData[popupSelect_vue.showGroup];	 
+		myTool.myEvent.init(popupSelect_vue.ownEvent);
+	
 }
 function setSelectedEleByIds(ids){
 	if(ids){
