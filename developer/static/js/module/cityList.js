@@ -25,51 +25,29 @@ var conf_popup = {
 }
 myTool.myEvent.init(first_data.ownEvent);
 var cityInput = {};
-var okBtnCallback = function () {}
+//var okBtnCallback = function () {}
 
 function init(param) {
 	param.url = param.url||"/common/get_city";
 	getCityData(param.url,param.filterName);
 	cityInput = param.ele;
 	cityInput.val(first_data.city_name);
-	okBtnCallback = param.okBtnCallback;
+	okCallback = param.okCallback;
 	conf_popup.ownEvent=param.ownEvent||conf_popup.ownEvent;
-	param.ele.on("click", function () {
-		var offset = param.ele.offset();
-		conf_popup.left = offset.left;
-		conf_popup.top = offset.top + param.ele.outerHeight();
-		var selectName = param.ele.val();
-		 selectName = selectName.length?selectName.split(";"):"";
-		 if(selectName){
-		 	var ids = getCityCodeByNames(selectName);
-		 	conf_popup.showGroup = cityName_Map[selectName[0]].parent;
-		 }
-		
-		basePopupSelect.open(conf_popup,ids);
-	});
-	myTool.myEvent.on(document, conf_popup.ownEvent, function () {
-		//console.log(basePopupSelect);
-		//o.selected=basePopupSelect.selectData;
-		okBtnClick(basePopupSelect.selectData);
-
-	});
+    bindEle(param.ele,{ownEvent:param.ownEvent,okCallback:param.okCallback});
 	myTool.myEvent.on(document, first_data.ownEvent, function () {
 		cityInput.val(first_data.city_name);
 	});
-	myTool.bindAutoComplate(param.ele,autoData);
-	param.ele.on("keydown",function(){
-		basePopupSelect.close();
-	})
 }
 function getCityData(url,filterName){
 	$.get(url,function(serverData){
 		formatCityData(serverData.data,filterName);
 	},"json");
 }
-function okBtnClick(data) {
+function okBtnClick(data,okCallback) {
 		cityInput.val(data.name.join(";"));
-		if(typeof okBtnCallback==="function"){
-			okBtnCallback(data.id.join(";"));
+		if(typeof okCallback==="function"){
+            okCallback(data.id.join(";"));
 		}
 }
 function formatCityData(data, filterName) {
@@ -185,7 +163,41 @@ function getCityCodeByNames(name) {
 	   }
 	  return a;
 }
+function eleClick(ele,conf) {
+    cityInput=ele;
+    var offset = ele.offset();
+    conf_popup.left = offset.left;
+    conf_popup.top = offset.top + ele.outerHeight();
+    var selectName = ele.val();
+    selectName = selectName.length?selectName.split(";"):"";
+    if(selectName){
+        var ids = getCityCodeByNames(selectName);
+        conf_popup.showGroup = cityName_Map[selectName[0]].parent;
+    }
+    conf_popup.ownEvent=conf.ownEvent?conf.ownEvent:conf_popup.ownEvent;
+    conf_popup.type=conf.type?conf.type:conf_popup.type;
+    basePopupSelect.open(conf_popup,ids);
+}
+/*
+* conf=>ownEvent,okCallback
+*
+* */
+function bindEle(ele,conf){//绑定其他元素的城市,以及某些配置
+    myTool.myEvent.on(document, conf.ownEvent, function () {
+        //console.log(basePopupSelect);
+        o.selected=basePopupSelect.selectData;
+        okBtnClick(basePopupSelect.selectData,conf.okCallback);
+    });
+    myTool.bindAutoComplate(ele,autoData);
+    ele.on("keydown",function(){
+        basePopupSelect.close();
+    });
+    ele.on("click",function(){
+        eleClick(ele,conf);
+    });
+}
 o.init = init;
+o.bindEle = bindEle;
 o.getCityCodeByNames=getCityCodeByNames;
 o.getCityNameById=getCityNameById;
 o.first_data=first_data;
