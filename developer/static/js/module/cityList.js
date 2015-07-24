@@ -37,8 +37,7 @@ function init(param) {
     myTool.myEvent.on(document, first_data.ownEvent, function () {
         cityInput.val(first_data.city_name);
     });
-    bindEle(param.ele,{ownEvent:param.ownEvent,okCallback:param.okCallback});
-
+    bindEle(param.ele,{ownEvent:param.ownEvent,okCallback:param.okCallback,type:param.type||"radio"});
 }
 function getCityData(url,filterName){
 	$.get(url,function(serverData){
