@@ -257,12 +257,17 @@ function getAllSelected() {
 		}
 	}
 }
-function setPopupOffset(top,left){
+function setPopupOffset(){
+    var H_top = 5;//5px，特意留的空隙
+    var offset = targetEle.offset();
+    var ele_h = targetEle.height();
+    var top =offset.top+ele_h+H_top;
+    var left=offset.left;
     var win_h = j_win.height();
     var win_w = j_win.width();
-   var ele_h = targetEle.height();
+
     if(top+size.h>win_h){
-        top = top-size.h-ele_h-15;
+        top = top-size.h-ele_h-H_top;
     }
     if(left+size.w>win_w){
         left = win_w-size.w-50;

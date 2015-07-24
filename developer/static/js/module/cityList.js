@@ -169,9 +169,6 @@ function getCityCodeByNames(name) {
 }
 function eleClick(ele,conf) {
     cityInput=ele;
-    var offset = ele.offset();
-    conf_popup.left = offset.left;
-    conf_popup.top = offset.top + ele.outerHeight();
     var selectName = ele.val();
     selectName = selectName.length?selectName.split(";"):"";
     if(selectName){
