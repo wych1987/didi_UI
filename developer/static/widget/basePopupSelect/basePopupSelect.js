@@ -1,15 +1,34 @@
 var o = {}
 var tpl = __inline("basePopupSelect.html");
 var myTool = require("myTool");
+var size = {};
+var thisPopup = {};
+var body =$("body");
+var j_win = $(window);
+var targetEle = {};//当前popup对应的输入框
+var timeNum = 0;
 //var dd_cityList = $("#popupSelect");
 $(document).ready(function(){
- 		$("body").append(tpl);
+    body.append(tpl);
  		//dd_cityList = $("#dd_cityList");
  	init();
+     thisPopup =  $("#ddui-basePopupSelect");
+    size ={h: thisPopup.height(),w: thisPopup.width()};
+    thisPopup.on("mouseleave",function(){
+        timeNum = setTimeout(function(){
+            close();
+        },2000);
+    });
+     thisPopup.on("mousemove",function(){
+        clearTimeout(timeNum);
+    })
+
 });
 
 /*
 	data:{
+	        top::0,
+	        left:0,
 			isHide:false,
 			type:'radio',
 			selected:"12q",//radio的时候
@@ -36,7 +55,6 @@ $(document).ready(function(){
 */
 var popupSelect_vue={};
 function init(){
-
 		 popupSelect_vue = new Vue({
 		el:"#ddui-basePopupSelect",
 		data:{
@@ -157,12 +175,16 @@ function groupBoxSetByChecked(arr,checked){
 打开弹层，param里主要是data的数据
 ids=>选中的id串，array
 */
-function open(param,ids){
-	popupSelect_vue.isHide=true;
+function open(param,ids,ele){
+    close();
+    targetEle = ele;
 	var p = JSON.parse(JSON.stringify(param));//深拷贝
 	setOption(p);
 	setSelectedEleByIds(ids);
 	popupSelect_vue.isHide=false;
+   setTimeout(function(){
+       setPopupOffset(param.top,param.left);
+   },100);
 }
 function setOption(param){
 	for(var key in param){
@@ -203,12 +225,12 @@ function setSelectedEleByIds(ids){
 			}
 		}
 		popupSelect_vue.showList=popupSelect_vue.groupData[popupSelect_vue.showGroup];
+
 	}
 
 function close(){
-	setTimeout(function(){
-				popupSelect_vue.isHide=true;
-			},100);//延时一下让用户有视觉反应
+    clearTimeout(timeNum);
+    popupSelect_vue.isHide=true;
 }
 function getAllSelected() {
 	o.selectData = {
@@ -234,6 +256,20 @@ function getAllSelected() {
 			o.selectData.name.push(popupSelect_vue.other.name);
 		}
 	}
+}
+function setPopupOffset(top,left){
+    var win_h = j_win.height();
+    var win_w = j_win.width();
+   var ele_h = targetEle.height();
+    if(top+size.h>win_h){
+        top = top-size.h-ele_h-15;
+    }
+    if(left+size.w>win_w){
+        left = win_w-size.w-50;
+    }
+    popupSelect_vue.top=top;
+    popupSelect_vue.left=left;
+
 }
 o.open = open;
 o.close = close;

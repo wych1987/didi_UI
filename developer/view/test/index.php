@@ -2,8 +2,10 @@
 include("../layout/header.php");
 ?>
 <input id="cityInput" type="text" style="margin:50px;"/>
-<input id="cityInput02" type="text" style="margin:50px;"/>
 
+<div style="position: absolute;right:100px;top:100px">
+    <input id="cityInput02" type="text" style="margin:50px;"/>
+</div>
 <script type="text/javascript" src="/static/libs/jqueryUI/autoComplate.min.js"></script>
   <!--SCRIPT_PLACEHOLDER-->
 <!--RESOURCEMAP_PLACEHOLDER-->

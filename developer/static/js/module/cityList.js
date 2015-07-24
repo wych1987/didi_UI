@@ -176,7 +176,7 @@ function eleClick(ele,conf) {
     }
     conf_popup.ownEvent=conf.ownEvent?conf.ownEvent:conf_popup.ownEvent;
     conf_popup.type=conf.type?conf.type:conf_popup.type;
-    basePopupSelect.open(conf_popup,ids);
+    basePopupSelect.open(conf_popup,ids,ele);
 }
 /*
 * conf=>ownEvent,okCallback
