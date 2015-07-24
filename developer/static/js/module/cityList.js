@@ -34,10 +34,11 @@ function init(param) {
 	cityInput.val(first_data.city_name);
 	okCallback = param.okCallback;
 	conf_popup.ownEvent=param.ownEvent||conf_popup.ownEvent;
+    myTool.myEvent.on(document, first_data.ownEvent, function () {
+        cityInput.val(first_data.city_name);
+    });
     bindEle(param.ele,{ownEvent:param.ownEvent,okCallback:param.okCallback});
-	myTool.myEvent.on(document, first_data.ownEvent, function () {
-		cityInput.val(first_data.city_name);
-	});
+
 }
 function getCityData(url,filterName){
 	$.get(url,function(serverData){
@@ -145,7 +146,9 @@ function getCityNameById(id) {
 	   			a.push(cityId_Map[v].city_name);
 	   		})	   		
 	   }else{
-	   	a.push(cityId_Map[id].city_name)
+           if(cityId_Map[id]){
+               a.push(cityId_Map[id].city_name)
+           }
 	   }
 	  return a;
 }
@@ -159,7 +162,9 @@ function getCityCodeByNames(name) {
 	   			
 	   		})	   		
 	   }else{
-	   	a.push(cityName_Map[name].city_id)
+           if(cityName_Map[name]){
+               a.push(cityName_Map[name].city_id)
+           }
 	   }
 	  return a;
 }
@@ -185,7 +190,10 @@ function eleClick(ele,conf) {
 function bindEle(ele,conf){//绑定其他元素的城市,以及某些配置
     myTool.myEvent.on(document, conf.ownEvent, function () {
         //console.log(basePopupSelect);
-        o.selected=basePopupSelect.selectData;
+        o.selected={
+            city_id:basePopupSelect.selectData.id,
+            city_name:basePopupSelect.selectData.name
+        };
         okBtnClick(basePopupSelect.selectData,conf.okCallback);
     });
     myTool.bindAutoComplate(ele,autoData);
