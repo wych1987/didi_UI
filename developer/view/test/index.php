@@ -2,7 +2,8 @@
 include("../layout/header.php");
 ?>
 <input id="cityInput" type="text" style="margin:50px;"/>
-
+<p><label>客户群</label><input id="customerInput" type="text" style="margin:50px;"/>
+</p>
 <div style="position: absolute;right:100px;top:100px">
     <input id="cityInput02" type="text" style="margin:50px;"/>
 </div>
@@ -38,4 +39,12 @@ include("../layout/header.php");
         alert("111");
         console.log(cityList.selected.id);
     });
+    var popup_customer = require("popupCustom");
+    var customer_conf = {
+        ele:$("#customerInput"),
+        ownEvent:"custom_ok",
+        type:"radio"
+    }
+    popup_customer.init(customer_conf);
+
 	</script>
