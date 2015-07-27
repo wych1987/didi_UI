@@ -1,9 +1,10 @@
 <?php
 include("../layout/header.php");
 ?>
-<input id="cityInput" type="text" style="margin:50px;"/>
+<p><label>城市选择</label><input id="cityInput" type="text" style="margin:50px;"/>
 <p><label>客户群</label><input id="customerInput" type="text" style="margin:50px;"/>
 </p>
+
 <div style="position: absolute;right:100px;top:100px">
     <input id="cityInput02" type="text" style="margin:50px;"/>
 </div>
