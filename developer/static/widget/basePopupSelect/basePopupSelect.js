@@ -4,7 +4,7 @@ var myTool = require("myTool");
 var size = {};
 var thisPopup = {};
 var body =$("body");
-var j_win = $(window);
+//var j_win = $(window);
 var targetEle = {};//当前popup对应的输入框
 var timeNum = 0;
 //var dd_cityList = $("#popupSelect");
@@ -263,8 +263,8 @@ function setPopupOffset(){
     var ele_h = targetEle.height();
     var top =offset.top+ele_h+H_top;
     var left=offset.left;
-    var win_h = j_win.height();
-    var win_w = j_win.width();
+    var win_h = body.height();
+    var win_w = body.width();
 
     if(top+size.h>win_h){
         top = top-size.h-ele_h-H_top;

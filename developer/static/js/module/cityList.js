@@ -142,7 +142,9 @@ function getCityNameById(id) {
 		var a = [];
 	   if(Array.isArray(id)){
 	   		id.forEach(function(v){
-	   			a.push(cityId_Map[v].city_name);
+                if(cityId_Map[v])   {
+                    a.push(cityId_Map[v].city_name);
+                }
 	   		})	   		
 	   }else{
            if(cityId_Map[id]){
@@ -158,7 +160,6 @@ function getCityCodeByNames(name) {
 	   			if(cityName_Map[v]){
 	   				a.push(cityName_Map[v].city_id);
 	   			}
-	   			
 	   		})	   		
 	   }else{
            if(cityName_Map[name]){

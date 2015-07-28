@@ -20,7 +20,7 @@ var o = {}
     
     
 /*jqueryUI-autocomplete*/
-    function bindAutoComplate(dom, data) {
+    function bindAutoComplate(dom, data,ownEvent) {
 		var data = data||[];
     	function split(val) {
     		return val.split(/;\s*/);
@@ -53,7 +53,10 @@ var o = {}
     			// add placeholder to get the comma-and-space at the end
     			terms.push("");
     			this.value = terms.join(";");
-    			$(this).trigger("blur");
+				if(ownEvent){
+					myEvent.trigger(this,ownEvent);
+				}				
+    			//$(this).trigger("blur");
     			return false;
     		}
     	});

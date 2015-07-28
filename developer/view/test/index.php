@@ -46,6 +46,6 @@ include("../layout/header.php");
         ownEvent:"custom_ok",
         type:"radio"
     }
-    popup_customer.init(customer_conf);
+   var custmon= popup_customer.init(customer_conf);
 
 	</script>
