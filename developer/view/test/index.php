@@ -1,12 +1,14 @@
 <?php
 include("../layout/header.php");
 ?>
-<p><label>城市选择</label><input id="cityInput" type="text" style="margin:50px;"/>
+<div class="flex-box-1">
+    <p><label>城市选择</label><input id="cityInput" type="text" style="margin:50px;"/>
 <p><label>客户群</label><input id="customerInput" type="text" style="margin:50px;"/>
 </p>
 
 <div style="position: absolute;right:100px;top:100px">
     <input id="cityInput02" type="text" style="margin:50px;"/>
+</div>
 </div>
 <script type="text/javascript" src="/static/libs/jqueryUI/autoComplate.min.js"></script>
   <!--SCRIPT_PLACEHOLDER-->
