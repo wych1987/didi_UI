@@ -35,11 +35,11 @@
 
 	</div>
 	<div class="ddui-popupSelect-btn-box">
-		<template v-if="type=='radio'">
-			<label class="ddui-popupSelect-all" v-if="other.name"><input type="radio" value="{{other.value}}" v-model="selected" v-on="click:otherClick($event)"><span>{{other.name}}</span></label>
+		<template v-if="type=='radio'"> 
+			<label class="ddui-popupSelect-all" v-if="other.name"><input type="radio" value="{{other.value}}" v-model="selected" v-on="click:otherClick($event)" v-attr="data-name:other.name"><span>{{other.name}}</span></label>
 		</template>
 		<template v-if="type=='checkbox'">
-			<label class="ddui-popupSelect-all" v-if="other.name"><input type="checkbox" value="{{other.value}}" v-model="other.selected" v-on="click:otherClick($event)"><span>{{other.name}}</span></label>
+			<label class="ddui-popupSelect-all" v-if="other.name"><input type="checkbox" value="{{other.value}}" v-model="other.selected" v-on="click:otherClick($event)" v-attr="data-name:other.name"><span>{{other.name}}</span></label>
 		</template>
 
 	 	<input type="button" value="取消" class="ddui-btn-cancel ddui-btn02 right" v-on="click:cancelClick"/>
