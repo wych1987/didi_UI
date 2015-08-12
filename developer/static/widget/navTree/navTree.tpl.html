@@ -1,35 +1,42 @@
-<div class="ddui-banner-box">
-    <div class="ddui-logo">
-        <i class="iconfont icon-didi-bi"></i>
-    </div>
-    <h2 class="ddui-nav-title"> 嘀嘀BI管理系统</h2>
-</div>
-<div class=" flex-box-row">
-<ul class="ddui-navtree-box">
-    <li>
-        <dl>
-            <dt class="ddui-icon-navtree"><i class="iconfont  icon-108fenleifangkuai"></i></dt>
-            <dd class="ddui-navtree-title01">常用功能</dd>
-        </dl>
-    </li>
-    <li>
-        <dl>
-            <dt class="ddui-icon-navtree"><i class="iconfont  icon-108fenleifangkuai"></i></dt>
-            <dd class="ddui-navtree-title01">常用功能</dd>
-        </dl>
-    </li>
-    <li>
-        <dl>
-            <dt class="ddui-icon-navtree"><i class="iconfont  icon-108fenleifangkuai"></i></dt>
-            <dd class="ddui-navtree-title01">常用功能</dd>
-        </dl>
-    </li>
-</ul>
-<ul class="ddui-navtree-trunk">
-    <li class="ddui-navtree-trunk">
-        <h3 class="ddui-navtree-trunk-title"> <i class="iconfont ddui-icon-trunk-item"></i><span>营销管理</span></h3>
-        <div class="ddui-navtree-branch">
-            <h3 class="ddui-navtree-trunk-title"> <i class="iconfont ddui-icon-trunk-item"></i><span>出租车</span></h3>
-        </div>
-    </li>
-</ul>
+
+    <ul class="ddui-navtree-box">
+        <li  v-repeat="nav:navtree" v-class="ddui-navtree-active:className">
+            <dl>
+                <dt class="ddui-icon-navtree"><i class="iconfont" v-class="nav.iconClass"></i></dt>
+                <dd class="ddui-navtree-title01">{{navName}}</dd>
+            </dl>
+        </li>
+    </ul>
+    <ul class="ddui-navtree-trunk-list">
+        <li class="ddui-navtree-trunk" v-repeat="navTrunk:trunk">
+            <!--正常的带子节点的枝干-->
+            <template v-if="navTrunk.item.length">
+                <h3 class="ddui-navtree-trunk-title"> <i class="iconfont ddui-icon-trunk-item ddui-font-tongjifenxi"></i><span>营销管理</span></h3>
+                <div class="ddui-navtree-branch">
+                    <!--子节点带树叶-->
+                    <h3 class="ddui-navtree-leaf-title"> <i class="iconfont ddui-icon-trunk-item ddui-font-dayuhao"></i><span>出租车</span></h3>
+                    <div class="ddui-navtree-leaf-list">
+                        <a href="#"  target="_blank">创建活动</a>
+                        <a href="#" target="_blank" class="ddui-navtree-leaf-active">创建活动</a>
+                        <a href="#"  target="_blank">创建活动</a>
+                    </div>
+                </div>
+                <div class="ddui-navtree-branch">
+                    <!--子节点不带树叶-->
+                    <h3 class="ddui-navtree-leaf-title ddui-navtree-leaf-title-active">
+                        <a href="#" >
+                            <i class="iconfont ddui-icon-trunk-item ddui-font-dayuhao"></i><span>出租车</span>
+                        </a>
+                    </h3>
+                </div>
+
+            </template>
+
+
+        </li>
+
+        <li class="ddui-navtree-trunk">
+            <!--树枝不带子节点-->
+            <a class="ddui-navtree-trunk-title ddui-navtree-trunk-title-active" href="#"> <i class="iconfont ddui-icon-trunk-item ddui-font-tongjifenxi" ></i><span>营销管理</span></a>
+        </li>
+    </ul>

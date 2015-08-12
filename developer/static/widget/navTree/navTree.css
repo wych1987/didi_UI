@@ -35,7 +35,7 @@
     color: #666;}
 
 .ddui-navtree-leaf-list{margin: 10px 0 0 10px;}
-.ddui-navtree-leaf-list a{display: block;height: 35px;line-height: 35px;overflow: hidden;padding:0 0 0 1em;margin:1px 0;}
+.ddui-navtree-trunk a{display: block;height: 35px;line-height: 35px;overflow: hidden;padding:0 0 0 1em;margin:1px 0;}
 .ddui-navtree-leaf-list a:hover,.ddui-navtree-leaf-list .ddui-navtree-leaf-active{background-color: #F5F5F5;
     margin: 1px 0 1px -58px;
     text-indent: 58px;
@@ -46,10 +46,21 @@
 .ddui-icon-trunk-item{margin-right:12px;display: inline-block}
 .ddui-navtree-trunk-title:hover,.ddui-navtree-leaf-title:hover{color:#ff8d04;}
 .ddui-icon-trunk-item.ddui-font-dayuhao {margin-right: 0 }
-.ddui-navtree-leaf-title-active .ddui-font-dayuhao{transform:rotate(-90deg);
+.ddui-navtree-leaf-title-active > .ddui-font-dayuhao{transform:rotate(-90deg);
     -ms-transform:rotate(90deg);; 	/* IE 9 */
     -moz-transform:rotate(90deg); 	/* Firefox */
     -webkit-transform:rotate(90deg);/* Safari 和 Chrome */
     -o-transform:rotate(90deg);
     margin-right: 10px;
+}
+.ddui-navtree-trunk-title-active{}
+.ddui-navtree-leaf-title-active >  a{background-color: #F5F5F5;
+    margin: 1px 0 1px -48px;
+    text-indent: 16px;
+    color: #ff8d04;
+    display: block;
+}
+.ddui-navtree-trunk-title-active{
+    background-color: #F5F5F5;
+    color: #ff8d04;
 }
