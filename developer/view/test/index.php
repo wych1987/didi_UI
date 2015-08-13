@@ -10,10 +10,12 @@ include("../layout/header.php");
     <input id="cityInput02" type="text" style="margin:50px;"/>
 </div>
 </div>
-<script type="text/javascript" src="/static/libs/jqueryUI/autoComplate.min.js"></script>
-  <!--SCRIPT_PLACEHOLDER-->
-<!--RESOURCEMAP_PLACEHOLDER-->
-	<script>
+<script type="text/javascript" charset="utf-8" src="/static/libs/jqueryUI/autoComplate.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/static/js/module/myTool_2e27776.js"></script>
+<script type="text/javascript" charset="utf-8" src="/static/widget/basePopupSelect/basePopupSelect_451aa78.js"></script>
+<script type="text/javascript" charset="utf-8" src="/static/js/module/cityList_b820d06.js"></script>
+<script type="text/javascript" charset="utf-8" src="/static/js/module/popupCustom_535de47.js"></script>
+<script>
 	
 	var myTool = require("myTool");
 	var cityList = require("cityList");

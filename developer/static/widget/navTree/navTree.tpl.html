@@ -3,40 +3,46 @@
         <li  v-repeat="nav:navtree" v-class="ddui-navtree-active:className">
             <dl>
                 <dt class="ddui-icon-navtree"><i class="iconfont" v-class="nav.iconClass"></i></dt>
-                <dd class="ddui-navtree-title01">{{navName}}</dd>
+                <dd class="ddui-navtree-title01">
+                    <template v-if="nav.url">
+                        <a href="#" target="{{targetType}}">{{nav.name}}</a>
+                    </template>
+                    <template v-if="nav.url==='undefined'">
+                        {{navName}}
+                    </template>
+                </dd>
             </dl>
         </li>
     </ul>
     <ul class="ddui-navtree-trunk-list">
-        <li class="ddui-navtree-trunk" v-repeat="navTrunk:trunk">
-            <!--正常的带子节点的枝干-->
+        <li class="ddui-navtree-trunk" v-repeat="navTrunk:showTrunk">
+
             <template v-if="navTrunk.item.length">
-                <h3 class="ddui-navtree-trunk-title"> <i class="iconfont ddui-icon-trunk-item ddui-font-tongjifenxi"></i><span>营销管理</span></h3>
-                <div class="ddui-navtree-branch">
-                    <!--子节点带树叶-->
-                    <h3 class="ddui-navtree-leaf-title"> <i class="iconfont ddui-icon-trunk-item ddui-font-dayuhao"></i><span>出租车</span></h3>
-                    <div class="ddui-navtree-leaf-list">
-                        <a href="#"  target="_blank">创建活动</a>
-                        <a href="#" target="_blank" class="ddui-navtree-leaf-active">创建活动</a>
-                        <a href="#"  target="_blank">创建活动</a>
+                <h3 class="ddui-navtree-trunk-title">
+                    <template v-if="navTrunk.url">
+                        <a href="navTrunk.url" target="{{targetType}}">
+                            <i class="iconfont ddui-icon-trunk-item ddui-font-tongjifenxi"></i><span>{{navTrunk.name}}</span>
+                        </a>
+                    </template>
+                     <template v-if="!navTrunk.url">
+                            <i class="iconfont ddui-icon-trunk-item ddui-font-tongjifenxi"></i><span>{{navTrunk.name}}</span>
+                    </template>
+                </h3>
+                <div class="ddui-navtree-branch" v-repeat="menu:navTrunk.menu">
+                    <h3 class="ddui-navtree-leaf-title">
+                        <template       v-if="menu.url">
+                            <a href="{{menu.url}}" target="{{targetType}}">
+                                <i class="iconfont ddui-icon-trunk-item ddui-font-dayuhao"></i><span>{{menu.name}}</span>
+                            </a>
+                        </template>
+                        <template v-if="!menu.url">
+                            <i class="iconfont ddui-icon-trunk-item ddui-font-dayuhao"></i><span>{{menu.name}}</span>
+                        </template>
+                    </h3>
+                    <div class="ddui-navtree-leaf-list" v-if="menu.menu.length">
+                        <a href="{{leaf.url}}"  target="{{targetType}}" v-repeat="leaf.menu.menu">{{leaf.name}}</a>
                     </div>
                 </div>
-                <div class="ddui-navtree-branch">
-                    <!--子节点不带树叶-->
-                    <h3 class="ddui-navtree-leaf-title ddui-navtree-leaf-title-active">
-                        <a href="#" >
-                            <i class="iconfont ddui-icon-trunk-item ddui-font-dayuhao"></i><span>出租车</span>
-                        </a>
-                    </h3>
-                </div>
-
             </template>
-
-
-        </li>
-
-        <li class="ddui-navtree-trunk">
-            <!--树枝不带子节点-->
-            <a class="ddui-navtree-trunk-title ddui-navtree-trunk-title-active" href="#"> <i class="iconfont ddui-icon-trunk-item ddui-font-tongjifenxi" ></i><span>营销管理</span></a>
         </li>
     </ul>
