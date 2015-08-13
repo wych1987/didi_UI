@@ -5,7 +5,8 @@
     text-align: center;
     margin: -4px 0 0 15px;
     display: inline-block;}
-.ddui-nav-title{overflow: hidden;height:inherit;line-height: 90px;padding-left: 50px;font-size: 30px;background: #fff;}
+.ddui-page-title{overflow: hidden;height:inherit;line-height: 90px;padding-left: 50px;font-size: 30px;background: #fff;}
+.ddui-nav-wrap{display: flex;}
 .ddui-navtree-box{width:100px;background: #363b3f;padding: 0;min-height: calc(100vh - 91px);
     box-sizing: border-box;}
 .ddui-navtree-box li{margin:40px 0 0 0; text-align: center;height:52px;color:#6d7077;cursor: pointer;}
@@ -64,3 +65,4 @@
     background-color: #F5F5F5;
     color: #ff8d04;
 }
+

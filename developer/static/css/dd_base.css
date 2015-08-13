@@ -1,7 +1,6 @@
 html,
 body {
 	min-height:100%;
-    overflow-x: hidden;
     font-family:"microsoft yahei",Tahoma,Arial,"Helvetica Neue","Hiragino Sans GB",Simsun,sans-self;
     margin: 0;
     padding: 0;

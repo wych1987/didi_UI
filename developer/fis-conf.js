@@ -78,5 +78,5 @@ fis.config.set('roadmap.path', [
 			release : '/static\/js\/$1/\$2\.js'
 		}
 	]);
-	//D:\work\BI_rebuild\git\didi_UI\developer
+	//fis release -m -p -d D:\xampp\htdocs\didiui
 	//fis release -m -p -d F:\xampp\htdocs\didiUI
