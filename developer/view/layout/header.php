@@ -26,10 +26,13 @@
 </div>
 <div class="rel flex-box-row" >
     <!--navtree组件-->
-    <div class=" flex-box-row" id="navtreeBox">
+    <div class=" flex-box-row rel" id="navtreeBox">
         <navtree-component > </navtree-component>
+        <div class="ddui-nav-trunk-close" v-on="click:trunkCloseClick" v-class="ddui-nav-close-active:trunkClose">
+            <i class="iconfont ddui-font-zuosanjiao"></i>
+        </div>
     </div>
-    <!-- -->
+
     <!--SCRIPT_PLACEHOLDER-->
     <!--RESOURCEMAP_PLACEHOLDER-->
    <script>
@@ -37,67 +40,5 @@
      //  var navTree = require("navTree");
 
    </script>
-    <!--
-    <ul class="ddui-navtree-box">
-        <li class="ddui-navtree-active">
-            <dl>
-                <dt class="ddui-icon-navtree"><i class="iconfont  ddui-font-108fenleifangkuai"></i></dt>
-                <dd class="ddui-navtree-title01">常用功能</dd>
-            </dl>
-        </li>
-        <li>
-            <dl>
-                <dt class="ddui-icon-navtree"><i class="iconfont  ddui-font-108fenleifangkuai"></i></dt>
-                <dd class="ddui-navtree-title01">常用功能</dd>
-            </dl>
-        </li>
-        <li>
-            <dl>
-                <dt class="ddui-icon-navtree"><i class="iconfont  ddui-font-108fenleifangkuai"></i></dt>
-                <dd class="ddui-navtree-title01">常用功能</dd>
-            </dl>
-        </li>
-    </ul>
-    <ul class="ddui-navtree-trunk-list">
-        <li class="ddui-navtree-trunk">
-            <h3 class="ddui-navtree-trunk-title"> <i class="iconfont ddui-icon-trunk-item ddui-font-tongjifenxi"></i><span>营销管理</span></h3>
-            <div class="ddui-navtree-branch">
-                <h3 class="ddui-navtree-leaf-title"> <i class="iconfont ddui-icon-trunk-item ddui-font-dayuhao"></i><span>出租车</span></h3>
-                  <div class="ddui-navtree-leaf-list">
-                    <a href="#"  target="_blank">创建活动</a>
-                    <a href="#" target="_blank" class="ddui-navtree-leaf-active">创建活动</a>
-                    <a href="#"  target="_blank">创建活动</a>
-                  </div>
-            </div>
-             <div class="ddui-navtree-branch">
-                <h3 class="ddui-navtree-leaf-title ddui-navtree-leaf-title-active "> <i class="iconfont ddui-icon-trunk-item ddui-font-dayuhao"></i><span>专车</span></h3>
-                  <div class="ddui-navtree-leaf-list">
-                    <a href="#"  target="_blank">创建活动</a>
-                    <a href="#" target="_blank" class="ddui-navtree-leaf-active">创建活动</a>
-                    <a href="#"  target="_blank">创建活动</a>
-                  </div>
-            </div>
-        </li>
-         <li class="ddui-navtree-trunk">
-            <h3 class="ddui-navtree-trunk-title"> <i class="iconfont ddui-icon-trunk-item ddui-font-tongjifenxi"></i><span>营销管理</span></h3>
-            <div class="ddui-navtree-branch">
-                <h3 class="ddui-navtree-leaf-title"> <i class="iconfont ddui-icon-trunk-item ddui-font-dayuhao"></i><span>出租车</span></h3>
-                  <div class="ddui-navtree-leaf-list hide">
-                    <a href="#"  target="_blank">创建活动</a>
-                    <a href="#" target="_blank" class="ddui-navtree-leaf-active">创建活动</a>
-                    <a href="#"  target="_blank">创建活动</a>
-                  </div>
-            </div>
-             <div class="ddui-navtree-branch">
-                 <h3 class="ddui-navtree-leaf-title ddui-navtree-leaf-title-active">
-                     <a href="#" >
-                         <i class="iconfont ddui-icon-trunk-item ddui-font-dayuhao"></i><span>出租车</span>
-                     </a>
-                 </h3>
-            </div>
-        </li>
-        <li class="ddui-navtree-trunk">
-            <a class="ddui-navtree-trunk-title ddui-navtree-trunk-title-active" href="#"> <i class="iconfont ddui-icon-trunk-item ddui-font-tongjifenxi" ></i><span>营销管理</span></a>
-        </li>
-    </ul>
-        -->
+
+

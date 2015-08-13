@@ -1,4 +1,3 @@
-
     <ul class="ddui-navtree-box">
         <li  v-repeat="nav:navtree" v-class="ddui-navtree-active:activeName===nav.name" v-on="click:treeClick(nav)">
             <dl>
@@ -14,7 +13,7 @@
             </dl>
         </li>
     </ul>
-    <ul class="ddui-navtree-trunk-list">
+    <ul class="ddui-navtree-trunk-list" v-class="ddui-navtree-trunk-hide:trunkClose">
         <li class="ddui-navtree-trunk" v-repeat="navTrunk:showTrunk">
                 <h3 class="ddui-navtree-trunk-title">
                     <template v-if="navTrunk.url">
@@ -27,7 +26,7 @@
                     </template>
                 </h3>
                 <div class="ddui-navtree-branch" v-repeat="menu:navTrunk.menu">
-                    <h3 class="ddui-navtree-leaf-title" v-on="click:leafClick(menu)">
+                    <h3 class="ddui-navtree-leaf-title" v-on="click:leafClick(menu)" v-class="ddui-nav-active:menu.is_active">
                         <template       v-if="menu.url">
                             <a href="{{menu.url}}" target="{{targetType}}">
                                 <i class="iconfont ddui-icon-trunk-item ddui-font-dayuhao"></i><span>{{menu.name}}</span>
@@ -37,7 +36,7 @@
                             <i class="iconfont ddui-icon-trunk-item ddui-font-dayuhao"></i><span>{{menu.name}}</span>
                         </template>
                     </h3>
-                    <div class="ddui-navtree-leaf-list" v-if="menu.menu.length">
+                    <div class="ddui-navtree-leaf-list" v-if="menu.menu.length" v-class="hide:!menu.is_active">
                         <a href="{{leaf.url}}"  target="{{targetType}}" v-repeat="leaf:menu.menu">{{leaf.name}}</a>
                     </div>
                 </div>

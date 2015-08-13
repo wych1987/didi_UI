@@ -22,14 +22,18 @@
     border-right: 1px solid #CCC;
     padding: 30px 0 0 0;
     background-color: #FAFAFA;
-    top: 2px;
+    overflow: hidden;;
     box-sizing: border-box;
-    border-top: 2px solid #E7E7E7
+    border-top: 2px solid #E7E7E7;
+    -moz-transition: width 0.2s ease-in;
+    -webkit-transition: width 0.2s ease-in;
+    -o-transition: width 0.2s ease-in;
+    transition: width 0.2s ease-in;
+    line-height: 35px;
 
 }
 .ddui-navtree-trunk{font-size: 16px;}
 .ddui-navtree-trunk-title{height: 35px;     cursor: pointer;
-    line-height: 35px;
     padding: 0 0 0 30px;
     font-size: 16px;
     margin: 0 0 15px 0;
@@ -37,6 +41,7 @@
 
 .ddui-navtree-leaf-list{margin: 10px 0 0 10px;}
 .ddui-navtree-trunk a{display: block;height: 35px;line-height: 35px;overflow: hidden;padding:0 0 0 1em;margin:1px 0;}
+.ddui-navtree-trunk-title > a{padding: 0 ;}
 .ddui-navtree-leaf-list a:hover,.ddui-navtree-leaf-list .ddui-navtree-leaf-active{background-color: #F5F5F5;
     margin: 1px 0 1px -58px;
     text-indent: 58px;
@@ -55,14 +60,59 @@
     margin-right: 10px;
 }
 .ddui-navtree-trunk-title-active{}
+/*
 .ddui-navtree-leaf-title-active >  a{background-color: #F5F5F5;
     margin: 1px 0 1px -48px;
     text-indent: 16px;
     color: #ff8d04;
     display: block;
 }
+
 .ddui-navtree-trunk-title-active{
     background-color: #F5F5F5;
     color: #ff8d04;
+}*/
+.ddui-navtree-leaf-title.ddui-nav-active{
+    color:#666;
+}.ddui-navtree-leaf-title.ddui-nav-active > a{
+     color: #ff8d04;
+     background-color: #F5F5F5;
 }
+.ddui-navtree-leaf-title >a {
+    margin: 1px 0 1px -48px;
+    text-indent: 16px;
+    display: block;
+}
+
+.ddui-navtree-leaf-title.ddui-nav-active  > .ddui-font-dayuhao{transform:rotate(90deg);
+    -ms-transform:rotate(90deg);; 	/* IE 9 */
+    -moz-transform:rotate(90deg); 	/* Firefox */
+    -webkit-transform:rotate(90deg);/* Safari 和 Chrome */
+    -o-transform:rotate(90deg);
+    margin-right: 10px;
+}
+.ddui-nav-close-active .ddui-font-zuosanjiao{
+    transform:rotate(180deg);
+    -ms-transform:rotate(180deg);; 	/* IE 9 */
+    -moz-transform:rotate(180deg); 	/* Firefox */
+    -webkit-transform:rotate(180deg);/* Safari 和 Chrome */
+    -o-transform:rotate(180deg);
+
+}
+.ddui-nav-trunk-close{position: absolute;top:2px;right:1px;
+    height:30px;width: 30px;background: rgb(243,243,243);
+    padding: 5px;
+    box-sizing: border-box;
+    color: #999;
+    display: inline-block;
+}
+.ddui-nav-trunk-close .iconfont{display: inline-block;}
+.ddui-nav-close-active{
+    right:-30px;
+}
+.ddui-navtree-trunk-hide{
+    width:0;
+    margin: 0 0 0 -1px;
+}
+
 
