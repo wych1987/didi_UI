@@ -133,6 +133,9 @@ function createNavTree(navData,targetType){
                     },
                     leafClick:function(v){
                         this.$dispatch("leafClick",v);
+                    },
+                    trunkCloseClick:function(){
+                        this.$dispatch("trunkCloseClick");
                     }
                 }
             }
@@ -151,11 +154,10 @@ function createNavTree(navData,targetType){
                 // return false;
                 // this.activeName= v.name;
             });
-        },
-        methods:{
-            trunkCloseClick:function(){
-                this.trunkClose = !this.trunkClose;
-            }
+             this.$on('trunkCloseClick', function () {
+                 this.trunkClose = !this.trunkClose;
+            });
+
         }
     });
     navtree_vue.navtree=navData.tree;

@@ -17,7 +17,7 @@
         <li class="ddui-navtree-trunk" v-repeat="navTrunk:showTrunk">
                 <h3 class="ddui-navtree-trunk-title" v-class="ddui-nav-active:navTrunk.is_active">
                     <template v-if="navTrunk.url">
-                        <a href="navTrunk.url" target="{{targetType}}">
+                        <a href="{{navTrunk.url}}" target="{{targetType}}">
                             <i class="iconfont ddui-icon-trunk-item " v-class="navTrunk.iconClass"></i><span>{{navTrunk.name}}</span>
                         </a>
                     </template>
@@ -42,3 +42,6 @@
                 </div>
         </li>
     </ul>
+    <div class="ddui-nav-trunk-close" v-on="click:trunkCloseClick" v-class="ddui-nav-close-active:trunkClose,hide:!showTrunk.length">
+        <i class="iconfont ddui-font-zuosanjiao"></i>
+    </div>

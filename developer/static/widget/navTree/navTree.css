@@ -41,9 +41,9 @@
     font-size: 16px;
     margin: 0 0 15px 0;
     color: #666;}
-
+.ddui-navtree-trunk-title.ddui-nav-active > a{color:#ff8d04;}
 .ddui-navtree-leaf-list{margin: 10px 0 0 10px;}
-.ddui-navtree-trunk a{display: block;height: 35px;line-height: 35px;overflow: hidden;padding:0 0 0 1em;margin:1px 0;font-size: 14px;}
+.ddui-navtree-trunk a{display: block;height: 35px;line-height: 35px;overflow: hidden;padding:0 0 0 1em;margin:1px 0;font-size: 14px;color: #666}
 .ddui-navtree-trunk-title > a{padding: 0 ;}
 .ddui-navtree-leaf-list a:hover,.ddui-navtree-leaf-list .ddui-nav-active{background-color: #F5F5F5;
     margin: 1px 0 1px -58px;
