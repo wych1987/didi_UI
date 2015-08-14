@@ -90,7 +90,7 @@ var bannerData = [
     {
         "id": "22",
         "name": "专车多维分析",
-        "url": "http://didiui.demo.com/view/test/",
+        "url": "asdads",
         "status": "0",
         "pid": "20",
         "is_admin": "0"
@@ -98,9 +98,30 @@ var bannerData = [
     {
         "id": "23",
         "name": "企业用车多维分析",
-        "url": "/dim/esCube",
+        "url": "",
         "status": "0",
         "pid": "20",
+        "is_admin": "0"
+    }, {
+        "id": "231",
+        "name": "企业用车多维分析1",
+        "url": "/dim/esCube",
+        "status": "0",
+        "pid": "23",
+        "is_admin": "0"
+    }, {
+        "id": "232",
+        "name": "企业用车多维分析3",
+        "url": "/view/test/",
+        "status": "0",
+        "pid": "23",
+        "is_admin": "0"
+    }, {
+        "id": "233",
+        "name": "企业用车多维分析2",
+        "url": "/dim/esCube",
+        "status": "0",
+        "pid": "23",
         "is_admin": "0"
     },
     {

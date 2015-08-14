@@ -28,9 +28,6 @@
     <!--navtree组件-->
     <div class=" flex-box-row rel" id="navtreeBox">
         <navtree-component > </navtree-component>
-        <div class="ddui-nav-trunk-close" v-on="click:trunkCloseClick" v-class="ddui-nav-close-active:trunkClose">
-            <i class="iconfont ddui-font-zuosanjiao"></i>
-        </div>
     </div>
     <script src="/api/navTree.txt"></script>
     <!--SCRIPT_PLACEHOLDER-->
