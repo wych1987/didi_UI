@@ -37,7 +37,7 @@
                         </template>
                     </h3>
                     <div class="ddui-navtree-leaf-list" v-if="menu.menu.length" v-class="hide:!menu.is_active">
-                        <a href="{{leaf.url}}"  target="{{targetType}}" v-repeat="leaf:menu.menu">{{leaf.name}}</a>
+                        <a href="{{leaf.url}}"  target="{{targetType}}" v-repeat="leaf:menu.menu" v-class="ddui-nav-active:leaf.is_active">{{leaf.name}}</a>
                     </div>
                 </div>
         </li>

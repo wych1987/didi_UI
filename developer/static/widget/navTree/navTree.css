@@ -10,7 +10,7 @@
 .ddui-navtree-box{width:100px;background: #363b3f;padding: 0;min-height: calc(100vh - 91px);
     box-sizing: border-box;}
 .ddui-navtree-box .iconfont{
-      font-size: 20px;
+      font-size: 24px;
 }
 .ddui-navtree-box li{margin:40px 0 0 0; text-align: center;height:52px;color:#6d7077;cursor: pointer;}
 .ddui-navtree-box li:hover,.ddui-navtree-box .ddui-navtree-active{color:#fa8919;position: relative;}
@@ -43,9 +43,9 @@
     color: #666;}
 
 .ddui-navtree-leaf-list{margin: 10px 0 0 10px;}
-.ddui-navtree-trunk a{display: block;height: 35px;line-height: 35px;overflow: hidden;padding:0 0 0 1em;margin:1px 0;}
+.ddui-navtree-trunk a{display: block;height: 35px;line-height: 35px;overflow: hidden;padding:0 0 0 1em;margin:1px 0;font-size: 14px;}
 .ddui-navtree-trunk-title > a{padding: 0 ;}
-.ddui-navtree-leaf-list a:hover,.ddui-navtree-leaf-list .ddui-navtree-leaf-active{background-color: #F5F5F5;
+.ddui-navtree-leaf-list a:hover,.ddui-navtree-leaf-list .ddui-nav-active{background-color: #F5F5F5;
     margin: 1px 0 1px -58px;
     text-indent: 58px;
     color:#ff8d04;
@@ -62,19 +62,8 @@
     -o-transform:rotate(90deg);
     margin-right: 10px;
 }
-.ddui-navtree-trunk-title-active{}
-/*
-.ddui-navtree-leaf-title-active >  a{background-color: #F5F5F5;
-    margin: 1px 0 1px -48px;
-    text-indent: 16px;
-    color: #ff8d04;
-    display: block;
-}
 
-.ddui-navtree-trunk-title-active{
-    background-color: #F5F5F5;
-    color: #ff8d04;
-}*/
+
 .ddui-navtree-leaf-title.ddui-nav-active{
     color:#666;
 }.ddui-navtree-leaf-title.ddui-nav-active > a{
@@ -86,15 +75,14 @@
     text-indent: 16px;
     display: block;
 }
-         /*
-.ddui-navtree-leaf-title.ddui-nav-active  > .ddui-font-dayuhao{transform:rotate(90deg);
-    -ms-transform:rotate(90deg);;
-    -moz-transform:rotate(90deg);
-    -webkit-transform:rotate(90deg);
-    -o-transform:rotate(90deg);
-    margin-right: 10px;
+.ddui-nav-active  a > .ddui-font-dayuhao{transform:rotate(90deg);
+    -ms-transform:rotate(0deg);;
+    -moz-transform:rotate(0deg);
+    -webkit-transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+    margin-right: 0px;
 }
-*/
+
 
 .ddui-nav-close-active .ddui-font-zuosanjiao{
     transform:rotate(180deg);
