@@ -1,4 +1,4 @@
-[
+var bannerData = [
     {
         "id": "11",
         "name": "出租车",
@@ -90,7 +90,7 @@
     {
         "id": "22",
         "name": "专车多维分析",
-        "url": "/dim/businessCube",
+        "url": "http://didiui.demo.com/view/test/",
         "status": "0",
         "pid": "20",
         "is_admin": "0"

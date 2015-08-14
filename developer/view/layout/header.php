@@ -32,13 +32,12 @@
             <i class="iconfont ddui-font-zuosanjiao"></i>
         </div>
     </div>
-
+    <script src="/api/navTree.txt"></script>
     <!--SCRIPT_PLACEHOLDER-->
     <!--RESOURCEMAP_PLACEHOLDER-->
    <script>
-       require("navTree");
-     //  var navTree = require("navTree");
-
+       var navTree = require("navTree");
+       navTree.init({data:bannerData});
    </script>
 
 

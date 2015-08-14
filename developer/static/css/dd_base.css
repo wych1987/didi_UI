@@ -48,11 +48,11 @@ ul,li{list-style: none;}
 
 
 @font-face {font-family: "iconfont";
-    src: url('//at.alicdn.com/t/font_1439482803_105116.eot'); /* IE9*/
-    src: url('//at.alicdn.com/t/font_1439482803_105116.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('//at.alicdn.com/t/font_1439482803_105116.woff') format('woff'), /* chrome、firefox */
-    url('//at.alicdn.com/t/font_1439482803_105116.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-    url('//at.alicdn.com/t/font_1439482803_105116.svg#iconfont') format('svg'); /* iOS 4.1- */
+    src: url('//at.alicdn.com/t/font_1439522995_588567.eot'); /* IE9*/
+    src: url('//at.alicdn.com/t/font_1439522995_588567.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//at.alicdn.com/t/font_1439522995_588567.woff') format('woff'), /* chrome、firefox */
+    url('//at.alicdn.com/t/font_1439522995_588567.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/font_1439522995_588567.svg#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -72,8 +72,10 @@ ul,li{list-style: none;}
 .ddui-font-youjiantou:before { content: "\e607"; }
 .ddui-font-loading2:before { content: "\e608"; }
 .ddui-font-shangsanjiao:before { content: "\e609"; }
+.ddui-font-biaoqian:before { content: "\e61c"; }
 .ddui-font-iconfontzhexiantu:before { content: "\e60a"; }
 .ddui-font-cha:before { content: "\e60b"; }
+.ddui-font-zhoujie:before { content: "\e61d"; }
 .ddui-font-icsanjiaoxia:before { content: "\e60c"; }
 .ddui-font-tongjitu:before { content: "\e60d"; }
 .ddui-font-zhexiantu:before { content: "\e60e"; }
@@ -85,14 +87,41 @@ ul,li{list-style: none;}
 .ddui-font-dayuhao:before { content: "\e619"; }
 .ddui-font-quanbuwenshufuzhi:before { content: "\e610"; }
 .ddui-font-shixinxinxing:before { content: "\e603"; }
+.ddui-font-yingxiaohuodong:before { content: "\e61e"; }
+.ddui-font-jikediancanicon45:before { content: "\e61f"; }
 .ddui-font-tishi:before { content: "\e613"; }
+.ddui-font-tables:before { content: "\e620"; }
 .ddui-font-iconfontpingmufangda:before { content: "\e604"; }
 .ddui-font-iconfontpingmusuoxiao:before { content: "\e605"; }
 .ddui-font-iconfontshexiangtou:before { content: "\e617"; }
+.ddui-font-shujuku:before { content: "\e61b"; }
 .ddui-font-didi-bi:before { content: "\e618"; }
 
 
+
  .ddui-con-body{background-color: #fff;border-top: 2px solid #e7e7e7;}
+ /*维护旧的iconfont*/
+.icon-fangda:before { content: "\e614"; }
+.icon-bianji:before { content: "\e60f"; }
+.icon-sousuo:before { content: "\e612"; }
+.icon-jiahao:before { content: "\e611"; }
+.icon-zuojiantou:before { content: "\e606"; }
+.icon-youjiantou:before { content: "\e607"; }
+.icon-loading2:before { content: "\e608"; }
+.icon-shangsanjiao:before { content: "\e609"; }
+.icon-iconfontzhexiantu:before { content: "\e60a"; }
+.icon-cha:before { content: "\e60b"; }
+.icon-icsanjiaoxia:before { content: "\e60c"; }
+.icon-tongjitu:before { content: "\e60d"; }
+.icon-zhexiantu:before { content: "\e60e"; }
+.icon-dingdan0:before { content: "\e601"; }
+.icon-wujiaoxing:before { content: "\e600"; }
+.icon-zhuzhuangtu:before { content: "\e602"; }
+.icon-quanbuwenshufuzhi:before { content: "\e610"; }
+.icon-shixinxinxing:before { content: "\e603"; }
+.icon-tishi:before { content: "\e613"; }
+.icon-iconfontpingmufangda:before { content: "\e604"; }
+.icon-iconfontpingmusuoxiao:before { content: "\e605"; }
 /*设置icon-size 保持大小一致*/
 .iconfont.icon-dingdan0{font-size: 45px;}
 .iconfont.icon-zhuzhuangtu{font-size: 30px;}
