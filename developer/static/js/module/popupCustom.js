@@ -7,8 +7,10 @@ var URL = "/api/popup_customer.php";
 function init(param){
     var m = setOption(param);
   //  ;
-    bindEle(m);
-	getCustomData(m)
+    if(m.ele){
+        bindEle(m);
+        getCustomData(m)
+    }
     return m;
 }
 function setOption(param){
@@ -94,6 +96,7 @@ function eleClick(obj) {
     basePopupSelect.open(obj.conf,ids,ele);
 }
 function bindEle(obj){
+    obj = setOption(obj);
     var ele = obj.ele;
     myTool.myEvent.on(document, obj.conf.ownEvent, function () {
         //console.log(basePopupSelect);
@@ -108,9 +111,8 @@ function bindEle(obj){
         basePopupSelect.close();
     });
     ele.on("click",function(){
-        //getCustomData(obj);
+        getCustomData(obj);
 		eleClick(obj);
-
     });
 }
 function getIdByName(names){
@@ -144,6 +146,6 @@ function getNameById(names){
 }
 
 o.init = init;
-//o.bindEle = bindEle;
+o.bindEle = bindEle;
 module.exports = o;
 });
