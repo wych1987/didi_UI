@@ -1,7 +1,7 @@
 <?php
 include("../layout/header.php");
 ?>
-<div class="flex-box-1 ddui-con-body">
+
     <p><label>城市选择</label><input id="cityInput" type="text" style="margin:50px;"/>
 <p><label>客户群</label><input id="customerInput" type="text" style="margin:50px;"/>
 </p>
