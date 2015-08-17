@@ -187,7 +187,7 @@ include("../layout/header.php");
             var left_operands_id = "";
             var left_operands_type = "";
 
-            if (a) {
+            if (a&& a.name) {
                var a_type = a.type ? a.type : custmon.name_map[a.name].type;
                 switch (a_type) {
                     case "file":
@@ -204,12 +204,12 @@ include("../layout/header.php");
                         break;
                 }
                 left_operands_type = a_type;
-                left_operator_field= a.operfield
+                left_operator_field= a.operfield;
             }
-            var b = v.a;
+            var b = v.b;
             var right_operands_id = "";
             var right_operands_type = "";
-             if (b) {
+             if (b&& b.name) {
                var b_type = b.type ? b.type : custmon.name_map[b.name].type;
                 switch (b_type) {
                     case "file":
@@ -226,7 +226,7 @@ include("../layout/header.php");
                         break;
                 }
                  right_operands_type = b_type;
-                 right_operands_id= b.operfield
+                 right_operator_field= b.operfield
             }
               detail.push({
                   name : v.tempName,
@@ -243,6 +243,7 @@ include("../layout/header.php");
               });
         });
         d.detail = JSON.stringify(detail);
+        console.log(d);
         return d;
     }
    function getTempCustomer(operList,index){
