@@ -7,6 +7,7 @@ var body =$("body");
 //var j_win = $(window);
 var targetEle = {};//当前popup对应的输入框
 var timeNum = 0;
+var popupUploadFile_event="popup_uploadFile";
 //var dd_cityList = $("#popupSelect");
 $(document).ready(function(){
     body.append(tpl);
@@ -55,6 +56,7 @@ $(document).ready(function(){
 */
 var popupSelect_vue={};
 function init(){
+    myTool.myEvent.init(popupUploadFile_event);
 		 popupSelect_vue = new Vue({
 		el:"#ddui-basePopupSelect",
 		data:{
@@ -72,13 +74,20 @@ function init(){
 				name:"",
 				value:"",
 				selected:false
-			}
+			},
+            uploadFile:false
 	},
 	"methods":{
 		groupClick:function(event){
 			var ele = event.target;
 			var g_name = ele.getAttribute("data-name");
-
+              if(g_name==="popup_uploadFile"){
+                 //上传文件
+                  close();
+                  //上传文件
+                  //触发上传文件的消息
+                  myTool.myEvent.trigger(targetEle[0]||document,popupUploadFile_event);
+              }
 			if(ele.type==="checkbox"){
 				groupBoxSetByChecked(this.groupData[g_name],ele.checked);
 			}
@@ -198,8 +207,7 @@ function setOption(param){
 	popupSelect_vue.type=param.type||"radio";
 	popupSelect_vue.ownEvent=param.ownEvent||"cityList_ok";
 	popupSelect_vue.showList=popupSelect_vue.groupData[popupSelect_vue.showGroup];	 
-		myTool.myEvent.init(popupSelect_vue.ownEvent);
-	
+	myTool.myEvent.init(popupSelect_vue.ownEvent);
 }
 function setSelectedEleByIds(ids){
 	if(ids){
@@ -239,6 +247,8 @@ function getAllSelected() {
 	};
 	if (popupSelect_vue.type === "radio") {
 		o.selectData.id = [popupSelect_vue.selected];
+		o.selectData.name = [popupSelect_vue.selected];
+
 	} else {
 		for (var key in popupSelect_vue.groupData) {
 			var t = popupSelect_vue.groupData[key];

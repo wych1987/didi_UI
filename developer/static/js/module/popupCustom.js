@@ -9,8 +9,8 @@ function init(param){
   //  ;
     if(m.ele){
         bindEle(m);
-        getCustomData(m)
     }
+    getCustomData(m);
     return m;
 }
 function setOption(param){
@@ -30,7 +30,8 @@ function setOption(param){
             name:"",
             value:"",
             selected:false
-        }
+        },
+        uploadFile:true
     };
     p.getIdByName=getIdByName;
     p.getNameById=getNameById;
@@ -38,11 +39,14 @@ function setOption(param){
     return p;
 }
 function getCustomData(param){
+        param = param||this;
     $.get(param.url||URL,param.search,function(serverData){
         if(serverData&&serverData.data){
              formatData2popup(serverData.data,param);
             //eleClick(param);
-            myTool.bindAutoComplate(param.ele,param.autoData,param.conf.ownEvent);
+            if(param.ele){
+                myTool.bindAutoComplate(param.ele,param.autoData,param.ownEvent);
+            }
         }
     },"json")
 }
@@ -74,25 +78,60 @@ function formatData2popup(data, obj) {
     group.sort(function(a,b){
         return b.value- a.value;
     })
+    obj.base = {
+        id_map: JSON.parse(JSON.stringify(ids_map)),
+        name_map: JSON.parse(JSON.stringify(names_map)),
+        autoData: JSON.parse(JSON.stringify(autoData)),
+        group: JSON.parse(JSON.stringify(group)),
+        groupData: JSON.parse(JSON.stringify(groupData))
+    }
     obj.conf.group = group;
     obj.conf.groupData = groupData;
     obj.name_map = names_map;
     obj.id_map = ids_map;
     obj.autoData = autoData;
+    obj.openByEle= openByEle;
 
 }
-function eleClick(obj) {
+
+    function openByEle(param) {
+        //点击元素打开popup
+        var ele = param.ele;
+        var search = param.search;
+        var autoComplateEvent = param.autoComplateEvent||"autoComplateEvent";
+        myTool.myEvent.init(autoComplateEvent);
+        var obj = this;
+        myTool.myEvent.on(document, obj.conf.ownEvent, function () {
+            //console.log(basePopupSelect);
+            obj.selected = {
+                id: basePopupSelect.selectData.id,
+                name: obj.getNameById(basePopupSelect.selectData.id)
+            };
+            obj.ele.val(obj.selected.name.join(";"));
+            // ele.val(obj.selected.name);
+        });
+        ele.on("keydown", function () {
+            basePopupSelect.close();
+        });
+
+        var ids = [];
+        ids = obj.getIdByName(ele.val());
+        var selectName = ele.val().split(";");
+        if (ids && obj.name_map[selectName[0]]) {
+            obj.conf.showGroup = obj.name_map[selectName[0]].parent;
+        }
+        myTool.bindAutoComplate(param.ele, obj.autoData,autoComplateEvent);
+        basePopupSelect.open(obj.conf, ids, ele);
+    }
+function eleClick(obj,names) {
+    var obj = obj||this;
     var ele = obj.ele;
     var ids = [];
-     ids = obj.getIdByName();
-    var selectName=obj.ele.val().split(";");
+     ids = obj.getIdByName(names);
+    var selectName=ele.val().split(";");
     if(ids&&obj.name_map[selectName[0]]){
         obj.conf.showGroup = obj.name_map[selectName[0]].parent;
     }
-   // conf_popup.ownEvent=conf.ownEvent?conf.ownEvent:conf_popup.ownEvent;
-   // conf_popup.type=conf.type?conf.type:conf_popup.type;
-   // basePopupSelect.open(conf_popup,ids,ele);
-   // obj.conf.selected = getIdByName(ele.val());
     basePopupSelect.open(obj.conf,ids,ele);
 }
 function bindEle(obj){
@@ -111,7 +150,9 @@ function bindEle(obj){
         basePopupSelect.close();
     });
     ele.on("click",function(){
-        getCustomData(obj);
+        if(param.search){
+            getCustomData(obj);
+        }
 		eleClick(obj);
     });
 }
@@ -121,25 +162,27 @@ function getIdByName(names){
     selectName = selectName.length?selectName.split(";"):[];
     var data = this.name_map;
     var p = [];
-    selectName.forEach(function(v){
-             if(data[v]){
-                 p.push(data[v].id);
-             }
-         })
+    if(data){
+        selectName.forEach(function(v){
+            if(data[v]){
+                p.push(data[v].id);
+            }
+        })
+    }
     return p;
 }
-function getNameById(names){
+function getNameById(ids){
     var data = this.id_map;
     var p = [];
-    if( Array.isArray(names)){
-             names.forEach(function(v){
+    if( Array.isArray(ids)){
+             ids.forEach(function(v){
                  if(data[v]){
-                     p.push(data[v].id);
+                     p.push(data[v].name);
                  }
              })
     }else{
-        if(data[names]){
-            p.push(data[names].id);
+        if(data[ids]){
+            p.push(data[ids].name);
         }
     }
     return p;

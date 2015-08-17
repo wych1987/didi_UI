@@ -17,8 +17,6 @@ var o = {}
 			ele.dispatchEvent(myEvent.eventList[eventName])
 		};
 
-    
-    
 /*jqueryUI-autocomplete*/
     function bindAutoComplate(dom, data,ownEvent) {
 		var data = data||[];
