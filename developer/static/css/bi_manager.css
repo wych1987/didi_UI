@@ -86,17 +86,17 @@ ul,li{list-style: none;}
 
 
 
-.form-error-msg{border: 1px solid #FFB8B8;
-    background:#ffffbb;
-  display: inline-block;
-  height: 42px;
-  width: 375px;
-  vertical-align: top;
-  box-sizing: border-box;
-  color:#cf0101;
-  position:relative;
-  padding-left:15px;
-  line-height42px;
+.form-error-msg{    border: 1px solid #FFB8B8;
+    background: #FFB;
+    display: inline-block;
+    height: 30px;
+    max-width: 375px;
+    padding: 0 15px;
+    vertical-align: top;
+    box-sizing: border-box;
+    color: #CF0101;
+    position: relative;
+    line-height: 30px;
   }
   
  .form-error-msg::before {
@@ -107,7 +107,7 @@ ul,li{list-style: none;}
     border-bottom:6px solid transparent;
     border-left:0 solid transparent;
     border-right:6px solid #ffb8b8;
-    top:15px;
+    top:10px;
     left:-6px;
  }
  .form-error-msg::after{
@@ -118,7 +118,7 @@ ul,li{list-style: none;}
     border-bottom:5px solid transparent;
     border-left:0 solid transparent;
     border-right:5px solid #ffffbb;
-    top:16px;
+    top:11px;
     left:-5px;
  }
 

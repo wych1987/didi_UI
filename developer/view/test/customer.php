@@ -156,7 +156,8 @@ include("../layout/header.php");
                  custmon.getCustomData() ;
              } ,
              submitForm:function(){
-                 getAjaxParam();
+                 var p = getAjaxParam();
+                 $.post("123",p);
              }
          }
      });
