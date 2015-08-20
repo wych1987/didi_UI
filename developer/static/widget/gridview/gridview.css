@@ -1,25 +1,43 @@
 /*gridview相关的样式*/
-.bi-gridview-table{     
-  word-wrap: break-word;
-  word-break: break-all;
-  width: 100%;
+.ddui-gridview-box {
+    padding: 10px 0;
 }
-.bi-gridview-table  td{
-    height:50px; 
-    box-sizing:border-box;
-    padding-left: 25px;
-    line-height: 50px;
+.ddui-gridview-table {
+    width: 100%;
 }
-.bi-gridview-table  tbody {
-    color:#a4a9ae;
-}.bi-gridview-table  tbody tr:nth-child(2n){
-    background-color: #fafafa;
+.ddui-gridview-table, .ddui-gridview-table td, .ddui-gridview-table th {
+    border: 1px solid #e2e2e2;
+    text-align: center;
 }
-.bi-gridview-table  thead td{
-   background-color: #f0f0f0; border-bottom: 1px solid #ccc;
+.ddui-gridview-table thead {
+    background: #f4f3f3;
+    color: #999;
 }
-
-.bi-gridview-table  .gridview-col-action{
-  max-width:210px;
+.ddui-gridview-table tr:nth-child(2n) {
+    background: #fcfcfc;
 }
-.bi-gridview-title{height: inherit;overflow: hidden;min-width: 80px;max-width: 180px;}
+.ddui-gridview-table tr {
+    height: 32px;
+    line-height: 32px;
+	
+}
+.ddui-gridview-box .ddui-th-title01 {
+    min-width: 40px;
+}
+.ddui-gridview-box .ddui-th-title02 {
+    min-width: 170px;
+}
+.ddui-gridview-box .ddui-th-title03 {
+    min-width: 150px;
+}
+.ddui-gridview-box .ddui-th-title04 {
+    min-width: 150px;
+}
+.ddui-gridview-box .ddui-th-title03,.ddui-gridview-box .ddui-th-title01,.ddui-gridview-box .ddui-th-title02,.ddui-gridview-box .ddui-th-title04{
+	max-width: 280px;
+   overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 30px;
+}
+.ddui-action-item{display: inline-block;margin-right: 30px;cursor: pointer;}

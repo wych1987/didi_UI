@@ -2,9 +2,9 @@
 
 var page = require("page"); 
 var tool_obj = {
-	isEdit:'<template v-if="tr.isEdit"><a href="#" target="_blank"  class="action-item" data-type="edit" v-attr="data-id:tr.id"><i class="iconfont icon-bianji" data-type="edit" v-attr="data-id:tr.id"></i>编辑</a></template>',
-	isCopy:'<template v-if="tr.isCopy"><a  href="#" class="action-item" data-type="copy" v-attr="data-id:tr.id"><i class="iconfont icon-quanbuwenshufuzhi" data-type="copy" v-attr="data-id:tr.id"></i>复制</a></template>',
-	isSearch:'<template v-if="tr.isSearch"><a href="#" target="_blank" class="action-item" data-type="search" v-attr="data-id:tr.id"><i class="iconfont icon-sousuo" data-type="search" v-attr="data-id:tr.id"></i>查看</a> </template>'
+	isEdit:'<template v-if="tr.isEdit"><a href="#" target="_blank"  class="ddui-action-item" data-type="edit" v-attr="data-id:tr.id"><i class="iconfont ddui-icon-bianji" data-type="edit" v-attr="data-id:tr.id"></i>编辑</a></template>',
+	isCopy:'<template v-if="tr.isCopy"><a  href="#" class="ddui-action-item" data-type="copy" v-attr="data-id:tr.id"><i class="iconfont ddui-icon-quanbuwenshufuzhi" data-type="copy" v-attr="data-id:tr.id"></i>复制</a></template>',
+	isSearch:'<template v-if="tr.isSearch"><a href="#" target="_blank" class="ddui-action-item" data-type="search" v-attr="data-id:tr.id"><i class="iconfont ddui-icon-sousuo" data-type="search" v-attr="data-id:tr.id"></i>查看</a> </template>'
 }
 var gridviewTpl=__inline("gridview.tpl.html")
 
@@ -16,7 +16,7 @@ function createTbodyTpl(tbody,tool){
 	var h = "";
 	var d = formatTplData(tbody);
 	d.forEach(function(v){		 
-			h+='<td ><div class="bi-gridview-title '+v.className+' " >{{tr.'+v.text+'}}</div></td>';
+			h+='<td ><div class="ddui-gridview-title '+v.className+' " >{{tr.'+v.text+'}}</div></td>';
 	});
 	var t = "";
 	if(tool){
@@ -24,7 +24,7 @@ function createTbodyTpl(tbody,tool){
 			t+=tool_obj[v];
 		})
 	}
-	h+='<td ><div class="gridview-col-action color-orange" >'+t+'</div></td>';
+	h+='<td ><div class="ddui-gridview-col-action color-orange" >'+t+'</div></td>';
 	return h;
 }
 function initGridViewComponent(tbody,tool){
