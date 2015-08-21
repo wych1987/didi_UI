@@ -2,15 +2,17 @@ define('popupCustom', function(require, exports, module){
 var o = {}
 var basePopupSelect = require("basePopupSelect");
 var myTool = require("myTool");
-var URL = "/api/popup_customer.php";
+var URL = "/customer_base/get_customer_info";
+//var URL = "/api/popup_customer.php";
 
 function init(param){
     var m = setOption(param);
   //  ;
+
+    getCustomData(m);
     if(m.ele){
         bindEle(m);
     }
-    getCustomData(m);
     return m;
 }
 function setOption(param){
@@ -43,8 +45,8 @@ function getCustomData(param){
     $.get(param.url||URL,param.search,function(serverData){
         if(serverData&&serverData.data){
              formatData2popup(serverData.data,param);
-            //eleClick(param);
             if(param.ele){
+                //eleClick(param);
                 myTool.bindAutoComplate(param.ele,param.autoData,param.ownEvent);
             }
         }
@@ -129,7 +131,7 @@ function eleClick(obj,names) {
     var ids = [];
      ids = obj.getIdByName(names);
     var selectName=ele.val().split(";");
-    if(ids&&obj.name_map[selectName[0]]){
+    if(ids.length&&obj.name_map&&obj.name_map[selectName[0]]){
         obj.conf.showGroup = obj.name_map[selectName[0]].parent;
     }
     basePopupSelect.open(obj.conf,ids,ele);
@@ -150,7 +152,7 @@ function bindEle(obj){
         basePopupSelect.close();
     });
     ele.on("click",function(){
-        if(param.search){
+        if(obj&&obj.search){
             getCustomData(obj);
         }
 		eleClick(obj);

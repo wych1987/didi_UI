@@ -65,7 +65,8 @@ function formatNavtreeData(data) {
     return {tree:tree,showTrunk:showTrunk};
 }
 function createNavTree(navData,targetType){
-      var trunkClose = navData.showTrunk.length ?false:true;
+      //var trunkClose = navData.showTrunk.length ?false:true;
+      var trunkClose =true;
     var navtree_vue = new Vue({
         el: '#navtreeBox',
         data: {
