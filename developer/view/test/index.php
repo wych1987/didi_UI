@@ -42,7 +42,7 @@ include("../layout/header.php");
         alert("111");
         console.log(cityList.selected.id);
     });
-    var popup_customer = require("popupCustom");
+    var popup_customer = require("popupCustom_v2");
     var customer_conf = {
         ele:$("#customerInput"),
         ownEvent:"custom_ok",

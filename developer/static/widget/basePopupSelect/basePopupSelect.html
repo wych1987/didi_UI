@@ -3,9 +3,9 @@
 <div class="ddui-popupSelect-group-wrap flex-box-row">
 	<template v-if="type=='radio'">
 	<ul class="ddui-popupSelect-group " v-on="click:groupClick($event)">
-		<template v-if="uploadFile">
-			<li title="上传文件" data-id="popup_uploadFile" data-name="popup_uploadFile" class="ddui-uoload"><i class="iconfont ddui-font-shangchuan"></i>上传</li>
-		</template>
+
+			<li v-if="uploadFile" title="上传文件" data-id="popup_uploadFile" data-name="popup_uploadFile" class="ddui-uoload"><i class="iconfont ddui-font-shangchuan"></i>上传</li>
+
 		<li v-repeat="g:group" title="{{g.name}}" v-attr="data-id:g.id,data-name:g.name" v-class="ddui-popupSelect-group-active:showGroup==g.name">{{g.name}}</li>
 	</ul>
 	<ul class="ddui-popupSelect-item-wrap flex-box-1" v-on="click:itemBoxClick($event)">
@@ -21,6 +21,7 @@
 </template>
 <template v-if="type=='checkbox'">
 	<ul class="ddui-popupSelect-group " v-on="click:groupClick($event)">
+        <li v-if="uploadFile" title="上传文件" data-id="popup_uploadFile" data-name="popup_uploadFile" class="ddui-uoload"><i class="iconfont ddui-font-shangchuan"></i>上传</li>
 		<li v-repeat="g:group" title="{{g.name}}" v-attr="data-id:g.id,data-name:g.name" v-class="ddui-popupSelect-group-active:showGroup==g.name">
 			<input type="checkbox" name="popupSelect" v-model="g.selected" value="{{g.value}}" v-attr="data-name:g.name"/>{{g.name}}</li>
 	</ul>

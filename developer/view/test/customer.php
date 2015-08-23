@@ -105,14 +105,12 @@ include("../layout/header.php");
      }
      return t+"__"+num;
  }
- var popup_customer = require("popupCustom");
+ var popup_customer = require("popupCustom_v2");
  var customer_conf = {
      //ele:$(".J_customerInput"),
      ownEvent:"custom_ok",
      type:"radio",
-     uploadFile:function(){
-         console.log("upload");
-     }
+     uploadFile: true
  }
  function init(){
      var custorm_vue = new Vue({
