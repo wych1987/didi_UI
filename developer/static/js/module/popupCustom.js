@@ -1,20 +1,22 @@
-define('popupCustom_v2', function(require, exports, module){
+define('popupCustom', function(require, exports, module){
     var o = {}
     var basePopupSelect = require("basePopupSelect");
     var myTool = require("myTool");
-//var URL = "/customer_base/get_customer_info";
-    var URL = "/api/popup_customer.php";
+var URL = "/customer_base/get_customer_info";
+ //   var URL = "/api/popup_customer.php";
 
-    function init(param){
-        var m = setOption(param);
-        m.getCustomData();
-        if(m.ele){
-            // bindEle(m);
-            m.ele.on("click",function(){
-                m.openByEle({ele:m.ele});
-            })
-        }
-        return m;
+    function init(param) {
+    	var m = setOption(param);
+    	m.getCustomData();
+    	if (m.ele) {
+    		// bindEle(m);
+    		m.ele.on("click", function () {
+    			m.openByEle({
+    				ele : m.ele
+    			});
+    		});
+    	}
+    	return m;
     }
     function setOption(param){
         var p = {};
@@ -97,74 +99,47 @@ define('popupCustom_v2', function(require, exports, module){
     }
 
     function openByEle(param) {
-        //点击元素打开popup
-        var ele = param.ele;
-        //var search = param.search;
-        var autoComplateEvent = param.autoComplateEvent||"autoComplateEvent";
-        myTool.myEvent.init(autoComplateEvent);
-        var obj = this;
-        obj.ele = ele;
-        if(param.conf){
-            for(var c in param.conf){
-                obj.conf[c]=param.conf[c]
-            }
-        }
-        myTool.myEvent.on(document, obj.conf.ownEvent, function () {
-            //console.log(basePopupSelect);
-            obj.selected = {
-                id: basePopupSelect.selectData.id,
-                name: obj.getNameById(basePopupSelect.selectData.id)
-            };
-            obj.ele.val(obj.selected.name.join(";"));
-            // ele.val(obj.selected.name);
-        });
-        ele.on("keydown", function () {
-            basePopupSelect.close();
-        });
-        var ids = [];
-        ids = obj.getIdByName(ele.val());
-        var selectName = ele.val().split(";");
-        if (ids && obj.name_map[selectName[0]]) {
-            obj.conf.showGroup = obj.name_map[selectName[0]].parent;
-        }
-        myTool.bindAutoComplate(param.ele, obj.autoData,autoComplateEvent);
-        basePopupSelect.open(obj.conf, ids, ele);
-    }
-    /*
-     function eleClick(obj,names) {
-     var obj = obj||this;
-     var ele = obj.ele;
-     var ids = [];
-     ids = obj.getIdByName(names);
-     var selectName=ele.val().split(";");
-     if(ids.length&&obj.name_map&&obj.name_map[selectName[0]]){
-     obj.conf.showGroup = obj.name_map[selectName[0]].parent;
-     }
-     basePopupSelect.open(obj.conf,ids,ele);
-     }
-     function bindEle(obj){
-     obj = setOption(obj);
-     var ele = obj.ele;
-     myTool.myEvent.on(document, obj.conf.ownEvent, function () {
-     //console.log(basePopupSelect);
-     obj.selected={
-     id:basePopupSelect.selectData.id,
-     name:basePopupSelect.selectData.name
-     };
-     ele.val(obj.selected.name);
-     });
+    	//点击元素打开popup
+    	var ele = param.ele;
+    	//var search = param.search;
+    	var autoComplateEvent = param.autoComplateEvent || "autoComplateEvent";
+    	myTool.myEvent.init(autoComplateEvent);
+    	var obj = this;
+    	obj.ele = ele;
+    	obj.handle = obj.handle || {};
+    	obj.handle.custom_ok = obj.handle.custom_ok || function () {
+    		//console.log(basePopupSelect);
+    		obj.selected = {
+    			id : basePopupSelect.selectData.id,
+    			name : obj.getNameById(basePopupSelect.selectData.id)
+    		};
+    		obj.ele.val(obj.selected.name.join(";"));
+    		// ele.val(obj.selected.name);
+    	}
+    	obj.handle.keydown = obj.handle.keydown || function () {
+    		basePopupSelect.close();
+    	}
 
-     ele.on("keydown",function(){
-     basePopupSelect.close();
-     });
-     ele.on("click",function(){
-     if(obj&&obj.search){
-     getCustomData(obj);
-     }
-     eleClick(obj);
-     });
-     }
-     */
+    	if (param.conf) {
+    		for (var c in param.conf) {
+    			obj.conf[c] = param.conf[c]
+    		}
+    	}
+		
+    	myTool.myEvent.remove(ele[0], obj.conf.ownEvent, obj.handle.custom_ok);
+    	myTool.myEvent.on(ele[0], obj.conf.ownEvent, obj.handle.custom_ok);
+    	ele.unbind("keydown", obj.handle.keydown);
+    	ele.bind("keydown", obj.handle.keydown);
+    	var ids = [];
+    	ids = obj.getIdByName(ele.val());
+    	var selectName = ele.val().split(";");
+    	if (ids && obj.name_map[selectName[0]]) {
+    		obj.conf.showGroup = obj.name_map[selectName[0]].parent;
+    	}
+    	myTool.bindAutoComplate(param.ele, obj.autoData, autoComplateEvent);
+    	basePopupSelect.open(obj.conf, ids, ele);
+    }
+ 
     function getIdByName(names){
         var ele = this.ele;
         var selectName = names||ele.val();

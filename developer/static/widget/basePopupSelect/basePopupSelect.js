@@ -170,7 +170,8 @@ function okBtnClick(ele) { //v=vue
 	} else {
 		getAllSelected();
 	}
-	myTool.myEvent.trigger(document, popupSelect_vue.ownEvent);
+	var e = targetEle[0]||document;
+	myTool.myEvent.trigger(e, popupSelect_vue.ownEvent);
 	close()
 }
 function groupBoxSetByChecked(arr,checked){
