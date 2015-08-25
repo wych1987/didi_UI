@@ -1,0 +1,407 @@
+var bannerData = [
+    {
+        "id": "11",
+        "name": "出租车",
+        "url": "/secret/taxi",
+        "status": "0",
+        "pid": "10",
+        "is_admin": "0"
+    },
+    {
+        "id": "12",
+        "name": "专车",
+        "url": "/secret/car",
+        "status": "0",
+        "pid": "10",
+        "is_admin": "0"
+    },
+    {
+        "id": "13",
+        "name": "企业用车",
+        "url": "/secret/enterprise_car",
+        "status": "0",
+        "pid": "10",
+        "is_admin": "0"
+    },
+    {
+        "id": "14",
+        "name": "顺风车",
+        "url": "/secret/share_car",
+        "status": "0",
+        "pid": "10",
+        "is_admin": "0"
+    },
+    {
+        "id": "15",
+        "name": "营销管理",
+        "url": "",
+        "status": "0",
+        "pid": "0",
+        "is_admin": "0"
+    },
+    {
+        "id": "16",
+        "name": "营销活动列表",
+        "url": "/market_v2/act_list",
+        "status": "0",
+        "pid": "15",
+        "is_admin": "0"
+    },
+    {
+        "id": "17",
+        "name": "创建活动",
+        "url": "/market_v2/create",
+        "status": "0",
+        "pid": "15",
+        "is_admin": "0"
+    },
+    {
+        "id": "18",
+        "name": "分析中心",
+        "url": "",
+        "status": "0",
+        "pid": "0",
+        "is_admin": "0"
+    },
+    {
+        "id": "19",
+        "name": "标签系统",
+        "url": "/tag/index",
+        "status": "0",
+        "pid": "25",
+        "is_admin": "0"
+    },
+    {
+        "id": "20",
+        "name": "多维分析",
+        "url": "",
+        "status": "0",
+        "pid": "18",
+        "is_admin": "0"
+    },
+    {
+        "id": "21",
+        "name": "打车多维分析",
+        "url": "/dim/taxiCube",
+        "status": "0",
+        "pid": "20",
+        "is_admin": "0"
+    },
+    {
+        "id": "22",
+        "name": "专车多维分析",
+        "url": "asdads",
+        "status": "0",
+        "pid": "20",
+        "is_admin": "0"
+    },
+    {
+        "id": "23",
+        "name": "企业用车多维分析",
+        "url": "",
+        "status": "0",
+        "pid": "20",
+        "is_admin": "0"
+    }, {
+        "id": "231",
+        "name": "企业用车多维分析1",
+        "url": "/dim/esCube",
+        "status": "0",
+        "pid": "23",
+        "is_admin": "0"
+    }, {
+        "id": "232",
+        "name": "企业用车多维分析3",
+        "url": "/view/test/",
+        "status": "0",
+        "pid": "23",
+        "is_admin": "0"
+    }, {
+        "id": "233",
+        "name": "企业用车多维分析2",
+        "url": "/dim/esCube",
+        "status": "0",
+        "pid": "23",
+        "is_admin": "0"
+    },
+    {
+        "id": "24",
+        "name": "市场部多维分析",
+        "url": "/dim/marketCube",
+        "status": "0",
+        "pid": "20",
+        "is_admin": "0"
+    },
+    {
+        "id": "25",
+        "name": "数据中心",
+        "url": "",
+        "status": "0",
+        "pid": "0",
+        "is_admin": "0"
+    },
+    {
+        "id": "26",
+        "name": "BI日报",
+        "url": "/report/day",
+        "status": "0",
+        "pid": "25",
+        "is_admin": "0"
+    },
+    {
+        "id": "27",
+        "name": "BI分析报告",
+        "url": "/analysis_report/analysis",
+        "status": "0",
+        "pid": "25",
+        "is_admin": "0"
+    },
+    {
+        "id": "28",
+        "name": "监控中心",
+        "url": "",
+        "status": "0",
+        "pid": "0",
+        "is_admin": "0"
+    },
+    {
+        "id": "29",
+        "name": "订单热力图",
+        "url": "/taxi_hotmap/taxi",
+        "status": "0",
+        "pid": "28",
+        "is_admin": "0"
+    },
+    {
+        "id": "30",
+        "name": "业务分析模型",
+        "url": "/analysis/business",
+        "status": "0",
+        "pid": "31",
+        "is_admin": "0"
+    },
+    {
+        "id": "31",
+        "name": "专题分析",
+        "url": "",
+        "status": "0",
+        "pid": "18",
+        "is_admin": "0"
+    },
+    {
+        "id": "32",
+        "name": "留存分析",
+        "url": "/remain_model/main",
+        "status": "0",
+        "pid": "31",
+        "is_admin": "0"
+    },
+    {
+        "id": "33",
+        "name": "留存分析模型设置",
+        "url": "/remain_model/setdest",
+        "status": "0",
+        "pid": "31",
+        "is_admin": "0"
+    },
+    {
+        "id": "34",
+        "name": "报表中心",
+        "url": "",
+        "status": "0",
+        "pid": "25",
+        "is_admin": "0"
+    },
+    {
+        "id": "35",
+        "name": "我的报表",
+        "url": "/data_center/report_index",
+        "status": "0",
+        "pid": "34",
+        "is_admin": "0"
+    },
+    {
+        "id": "36",
+        "name": "创建报表",
+        "url": "/data_center/self_defined",
+        "status": "0",
+        "pid": "34",
+        "is_admin": "0"
+    },
+    {
+        "id": "37",
+        "name": "乘客渠道统计",
+        "url": "/tempanalysis/passenger_channel_index",
+        "status": "0",
+        "pid": "34",
+        "is_admin": "0"
+    },
+    {
+        "id": "38",
+        "name": "合作平台数据统计",
+        "url": "/tempanalysis/cooperation_platform_index",
+        "status": "0",
+        "pid": "34",
+        "is_admin": "0"
+    },
+    {
+        "id": "39",
+        "name": "运营周报",
+        "url": "",
+        "status": "0",
+        "pid": "25",
+        "is_admin": "0"
+    },
+    {
+        "id": "40",
+        "name": "核心数据",
+        "url": "/weekly/core/index",
+        "status": "0",
+        "pid": "39",
+        "is_admin": "0"
+    },
+    {
+        "id": "41",
+        "name": "乘客概览",
+        "url": "/weekly/platform/index",
+        "status": "0",
+        "pid": "39",
+        "is_admin": "0"
+    },
+    {
+        "id": "42",
+        "name": "运力概览",
+        "url": "/weekly/platform/capacity",
+        "status": "0",
+        "pid": "39",
+        "is_admin": "0"
+    },
+    {
+        "id": "43",
+        "name": "分城市top30城市",
+        "url": "/weekly/city/index",
+        "status": "0",
+        "pid": "39",
+        "is_admin": "0"
+    },
+    {
+        "id": "44",
+        "name": "分城市开源",
+        "url": "/weekly/city/increase",
+        "status": "0",
+        "pid": "39",
+        "is_admin": "0"
+    },
+    {
+        "id": "45",
+        "name": "分城市订单波动",
+        "url": "/weekly/city/exception",
+        "status": "0",
+        "pid": "39",
+        "is_admin": "0"
+    },
+    {
+        "id": "46",
+        "name": "查看权限管理",
+        "url": "/weekly/auth?type=view",
+        "status": "0",
+        "pid": "39",
+        "is_admin": "0"
+    },
+    {
+        "id": "47",
+        "name": "编辑权限管理",
+        "url": "/weekly/auth?type=edit",
+        "status": "0",
+        "pid": "39",
+        "is_admin": "0"
+    },
+    {
+        "id": "49",
+        "name": "反作弊监控",
+        "url": "/monitor/fanzuobi",
+        "status": "0",
+        "pid": "28",
+        "is_admin": "0"
+    },
+    {
+        "id": "50",
+        "name": "反作弊日报",
+        "url": "/monitor/fanzuobi_report",
+        "status": "0",
+        "pid": "28",
+        "is_admin": "0"
+    },
+    {
+        "id": "52",
+        "name": "营销管理列表",
+        "url": "/market_manage/review_list",
+        "status": "0",
+        "pid": "15",
+        "is_admin": "0"
+    },
+    {
+        "id": "54",
+        "name": "专车实时监控",
+        "url": "/monitor/zhuanche",
+        "status": "0",
+        "pid": "28",
+        "is_admin": "0"
+    },
+    {
+        "id": "55",
+        "name": "顺风车实时监控",
+        "url": "/monitor/shunfengche",
+        "status": "0",
+        "pid": "28",
+        "is_admin": "0"
+    },
+    {
+        "id": "56",
+        "name": "出租车实时监控",
+        "url": "/monitor/taxi",
+        "status": "0",
+        "pid": "28",
+        "is_admin": "0"
+    },
+    {
+        "id": "57",
+        "name": "Phoenix实时监控",
+        "url": "",
+        "status": "0",
+        "pid": "28",
+        "is_admin": "0"
+    },
+    {
+        "id": "58",
+        "name": "账户专区",
+        "url": "/monitor/phoenix_account",
+        "status": "0",
+        "pid": "57",
+        "is_admin": "0"
+    },
+    {
+        "id": "59",
+        "name": "支付专区",
+        "url": "/monitor/phoenix_pay",
+        "status": "0",
+        "pid": "57",
+        "is_admin": "0"
+    },
+    {
+        "id": "60",
+        "name": "Proxy专区",
+        "url": "/monitor/phoenix_proxy",
+        "status": "0",
+        "pid": "57",
+        "is_admin": "0"
+    },
+    {
+        "id": "61",
+        "name": "提现专区",
+        "url": "/monitor/phoenix_tixian",
+        "status": "0",
+        "pid": "57",
+        "is_admin": "0"
+    }
+]

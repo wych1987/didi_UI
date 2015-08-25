@@ -12,18 +12,18 @@
 .ddui-navtree-box .iconfont{
       font-size: 24px;
 }
-.ddui-navtree-box li{margin:40px 0 0 0; text-align: center;height:52px;color:#6d7077;cursor: pointer;}
+.ddui-navtree-box li{margin:38px 0 0 0; text-align: center;height:52px;color:#6d7077;cursor: pointer;}
 .ddui-navtree-box li:hover,.ddui-navtree-box .ddui-navtree-active{color:#fa8919;position: relative;}
 .ddui-navtree-active:before{position: absolute;right:0;top:23px;content:" ";height:0;width:0;
     border-top: 8px solid transparent;border-left:0 solid transparent;
     border-right: 8px solid #fff;    border-bottom: 8px solid transparent;
 }
-.ddui-icon-navtree{height:22px;margin-bottom: 15px;font-size: 22px;}
+.ddui-icon-navtree{height:24px;margin-bottom: 15px;font-size: 24px;line-height:24px;}
 .ddui-navtree-title01{font-size: 14px;line-height: 15px;height: 15px;overflow: hidden;font-weight: 500;}
 .ddui-navtree-trunk-list{
     width: 219px;
     border-right: 1px solid #CCC;
-    padding: 30px 0 0 0;
+    padding: 38px 0 0 0;
     background-color: #FAFAFA;
     overflow: hidden;;
     box-sizing: border-box;
@@ -36,14 +36,14 @@
 
 }
 .ddui-navtree-trunk{font-size: 16px;}
-.ddui-navtree-trunk-title{height: 35px;     cursor: pointer;
-    padding: 0 0 0 30px;
+.ddui-navtree-trunk-title{height: 30px;     cursor: pointer;
+    padding: 0 0 0 26px;
     font-size: 16px;
     margin: 0 0 15px 0;
     color: #666;}
 .ddui-navtree-trunk-title.ddui-nav-active > a{color:#ff8d04;}
 .ddui-navtree-leaf-list{margin: 10px 0 0 10px;}
-.ddui-navtree-trunk a{display: block;height: 35px;line-height: 35px;overflow: hidden;padding:0 0 0 1em;margin:1px 0;font-size: 14px;color: #666}
+.ddui-navtree-trunk a{display: block;height:30px;line-height:30px;overflow: hidden;padding:0 0 0 1em;margin:1px 0;font-size: 14px;color: #666}
 .ddui-navtree-trunk-title > a{padding: 0 ;}
 .ddui-navtree-leaf-list a:hover,.ddui-navtree-leaf-list .ddui-nav-active{background-color: #F5F5F5;
     margin: 1px 0 1px -58px;
@@ -98,6 +98,10 @@
     box-sizing: border-box;
     color: #999;
     display: inline-block;
+	line-height: 20px;
+    display: inline-block;
+    text-align: center;
+    z-index: 10;
 }
 .ddui-nav-trunk-close .iconfont{display: inline-block;}
 .ddui-nav-close-active{
@@ -107,5 +111,5 @@
     width:0;
     margin: 0 0 0 -1px;
 }
-
+.ddui-toggle-trunk .ddui-navtree-branch{display: none;}
 

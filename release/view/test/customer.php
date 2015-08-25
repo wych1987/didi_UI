@@ -84,9 +84,10 @@ include("../layout/header.php");
     <a class="ddui-btn-big ddui-btn-cancel" href="#">取消</a>
 </div>
 </div>
-<script type="text/javascript" src="/static/libs/jqueryUI/autoComplate.min.js"></script>
-<!--SCRIPT_PLACEHOLDER-->
-<!--RESOURCEMAP_PLACEHOLDER-->
+<script type="text/javascript" charset="utf-8" src="/static/libs/jqueryUI/autoComplate.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/static/js/module/myTool.js"></script>
+<script type="text/javascript" charset="utf-8" src="/static/widget/basePopupSelect/basePopupSelect.js"></script>
+<script type="text/javascript" charset="utf-8" src="/static/js/module/popupCustom.js"></script>
 <script>
 
 

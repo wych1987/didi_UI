@@ -25,7 +25,7 @@ function formatNavtreeData(data) {
         if (iconClassMap[v.name]) {
             v.iconClass = iconClassMap[v.name];
         }else{
-            v.iconClass='ddui-font-dayuhao';
+            v.iconClass='ddui-font-108fenleifangkuai';
         }
         v.menu = [];
         if(!v.url){
@@ -137,6 +137,9 @@ function createNavTree(navData,targetType){
                     },
                     trunkCloseClick:function(){
                         this.$dispatch("trunkCloseClick");
+                    },
+                    trunkClick:function(event){
+                        this.$dispatch("trunkClick",event);
                     }
                 }
             }
@@ -158,6 +161,11 @@ function createNavTree(navData,targetType){
              this.$on('trunkCloseClick', function () {
                  this.trunkClose = !this.trunkClose;
             });
+              this.$on('trunkClick', function (event) {
+                   var ele = event.currentTarget;
+                  var t = ele.parentNode;
+                  t.classList.toggle("ddui-toggle-trunk");
+              });
 
         }
     });
