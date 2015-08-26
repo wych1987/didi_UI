@@ -193,7 +193,7 @@ function bindEle(ele,conf){//绑定其他元素的城市,以及某些配置
         };
         okBtnClick(basePopupSelect.selectData,conf.okCallback);
     });
-    myTool.bindAutoComplate(ele,autoData);
+    myTool.bindAutoComplate(ele,autoData,conf.ownEvent);
     ele.on("keydown",function(){
         basePopupSelect.close();
     });

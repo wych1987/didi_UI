@@ -1,1 +1,179 @@
-{"res":{"static/css/bi_manager.css":{"uri":"/static/css/bi_manager.css","type":"css"},"static/css/common.css":{"uri":"/static/css/common.css","type":"css"},"static/css/dd_base.css":{"uri":"/static/css/dd_base.css","type":"css","pkg":"p0"},"static/css/filter.css":{"uri":"/static/css/filter.css","type":"css"},"static/css/gridview.css":{"uri":"/static/css/gridview.css","type":"css"},"cityList":{"uri":"/static/js/module/cityList.js","type":"js","deps":["basePopupSelect","myTool"],"id":"cityList"},"myTool":{"uri":"/static/js/module/myTool.js","type":"js","id":"myTool"},"page":{"uri":"/static/js/module/page.js","type":"js"},"popupCustom":{"uri":"/static/js/module/popupCustom.js","type":"js","deps":["basePopupSelect","myTool"],"id":"popupCustom"},"static/libs/My97/WdatePicker.js":{"uri":"/static/libs/My97/WdatePicker.js","type":"js"},"static/libs/My97/calendar.js":{"uri":"/static/libs/My97/calendar.js","type":"js"},"static/libs/My97/config.js":{"uri":"/static/libs/My97/config.js","type":"js"},"static/libs/My97/lang/en.js":{"uri":"/static/libs/My97/lang/en.js","type":"js"},"static/libs/My97/lang/zh-cn.js":{"uri":"/static/libs/My97/lang/zh-cn.js","type":"js"},"static/libs/My97/lang/zh-tw.js":{"uri":"/static/libs/My97/lang/zh-tw.js","type":"js"},"static/libs/My97/skin/WdatePicker.css":{"uri":"/static/libs/My97/skin/WdatePicker.css","type":"css"},"static/libs/My97/skin/default/datepicker.css":{"uri":"/static/libs/My97/skin/default/datepicker.css","type":"css"},"static/libs/My97/skin/ugly/datepicker.css":{"uri":"/static/libs/My97/skin/ugly/datepicker.css","type":"css"},"static/libs/My97/skin/whyGreen/datepicker.css":{"uri":"/static/libs/My97/skin/whyGreen/datepicker.css","type":"css"},"static/libs/echarts-all.js":{"uri":"/static/libs/echarts-all.js","type":"js"},"static/libs/jquery.js":{"uri":"/static/libs/jquery.js","type":"js"},"static/libs/jqueryUI/autoComplate.min.js":{"uri":"/static/libs/jqueryUI/autoComplate.min.js","type":"js"},"static/libs/mod.js":{"uri":"/static/libs/mod.js","type":"js"},"static/libs/vue.js":{"uri":"/static/libs/vue.js","type":"js"},"static/libs/vue.min.js":{"uri":"/static/libs/vue.min.js","type":"js"},"static/widget/banner/banner.css":{"uri":"/static/widget/banner/banner.css","type":"css","pkg":"p0"},"banner":{"uri":"/static/widget/banner/banner.js","type":"js","deps":["static/widget/banner/banner.css"]},"static/widget/basePopupSelect/basePopupSelect.css":{"uri":"/static/widget/basePopupSelect/basePopupSelect.css","type":"css","pkg":"p0","id":"static/widget/basePopupSelect/basePopupSelect.css"},"basePopupSelect":{"uri":"/static/widget/basePopupSelect/basePopupSelect.js","type":"js","deps":["myTool","static/widget/basePopupSelect/basePopupSelect.css"],"id":"basePopupSelect"},"static/widget/gridview/gridview.css":{"uri":"/static/widget/gridview/gridview.css","type":"css","pkg":"p0"},"gridview":{"uri":"/static/widget/gridview/gridview.js","type":"js","deps":["page","static/widget/gridview/gridview.css"]},"static/widget/navTree/navTree.css":{"uri":"/static/widget/navTree/navTree.css","type":"css","pkg":"p0","id":"static/widget/navTree/navTree.css"},"navTree":{"uri":"/static/widget/navTree/navTree.js","type":"js","deps":["static/widget/navTree/navTree.css"],"id":"navTree"}},"pkg":{"p0":{"uri":"/static/css/didi_UI.css","type":"css","has":["static/css/dd_base.css","static/widget/banner/banner.css","static/widget/basePopupSelect/basePopupSelect.css","static/widget/gridview/gridview.css","static/widget/navTree/navTree.css"]}}}
+{
+    "res": {
+        "static/css/dd_base.css": {
+            "uri": "/static/ddui/css/dd_base.css",
+            "type": "css",
+            "pkg": "p0"
+        },
+        "static/css/filter.css": {
+            "uri": "/static/ddui/css/filter.css",
+            "type": "css"
+        },
+        "cityList": {
+            "uri": "/static/ddui/js/module_cityList.js",
+            "type": "js",
+            "deps": [
+                "basePopupSelect",
+                "myTool"
+            ],
+            "id": "cityList"
+        },
+        "myTool": {
+            "uri": "/static/ddui/js/module_myTool.js",
+            "type": "js",
+            "id": "myTool"
+        },
+        "page": {
+            "uri": "/static/ddui/js/module_page.js",
+            "type": "js"
+        },
+        "popupCustom": {
+            "uri": "/static/ddui/js/module_popupCustom.js",
+            "type": "js",
+            "deps": [
+                "basePopupSelect",
+                "myTool"
+            ],
+            "id": "popupCustom"
+        },
+        "popupCustom_v2": {
+            "uri": "/static/ddui/js/module_popupCustom_v2.js",
+            "type": "js",
+            "deps": [
+                "basePopupSelect",
+                "myTool"
+            ]
+        },
+        "static/libs/My97/WdatePicker.js": {
+            "uri": "/static/ddui/My97/WdatePicker.js",
+            "type": "js"
+        },
+        "static/libs/My97/calendar.js": {
+            "uri": "/static/ddui/My97/calendar.js",
+            "type": "js"
+        },
+        "static/libs/My97/config.js": {
+            "uri": "/static/ddui/My97/config.js",
+            "type": "js"
+        },
+        "static/libs/My97/lang/en.js": {
+            "uri": "/static/ddui/My97/lang/en.js",
+            "type": "js"
+        },
+        "static/libs/My97/lang/zh-cn.js": {
+            "uri": "/static/ddui/My97/lang/zh-cn.js",
+            "type": "js"
+        },
+        "static/libs/My97/lang/zh-tw.js": {
+            "uri": "/static/ddui/My97/lang/zh-tw.js",
+            "type": "js"
+        },
+        "static/libs/My97/skin/WdatePicker.css": {
+            "uri": "/static/ddui/My97/skin/WdatePicker.css",
+            "type": "css"
+        },
+        "static/libs/My97/skin/default/datepicker.css": {
+            "uri": "/static/ddui/My97/skin/default/datepicker.css",
+            "type": "css"
+        },
+        "static/libs/My97/skin/ugly/datepicker.css": {
+            "uri": "/static/ddui/My97/skin/ugly/datepicker.css",
+            "type": "css"
+        },
+        "static/libs/My97/skin/whyGreen/datepicker.css": {
+            "uri": "/static/ddui/My97/skin/whyGreen/datepicker.css",
+            "type": "css"
+        },
+        "static/libs/echarts-all.js": {
+            "uri": "/static/ddui/echarts-all.js",
+            "type": "js"
+        },
+        "static/libs/jquery.js": {
+            "uri": "/static/ddui/jquery.js",
+            "type": "js"
+        },
+        "static/libs/jqueryUI/autoComplate.min.js": {
+            "uri": "/static/ddui/jqueryUI/autoComplate.min.js",
+            "type": "js"
+        },
+        "static/libs/mod.js": {
+            "uri": "/static/ddui/mod.js",
+            "type": "js"
+        },
+        "static/libs/vue.js": {
+            "uri": "/static/ddui/vue.js",
+            "type": "js"
+        },
+        "static/libs/vue.min.js": {
+            "uri": "/static/ddui/vue.min.js",
+            "type": "js"
+        },
+        "static/widget/banner/banner.css": {
+            "uri": "/static/widget/banner/banner.css",
+            "type": "css",
+            "pkg": "p0"
+        },
+        "banner": {
+            "uri": "/static/ddui/js/widget_banner.js",
+            "type": "js",
+            "deps": [
+                "static/widget/banner/banner.css"
+            ]
+        },
+        "static/widget/basePopupSelect/basePopupSelect.css": {
+            "uri": "/static/widget/basePopupSelect/basePopupSelect.css",
+            "type": "css",
+            "pkg": "p0",
+            "id": "static/widget/basePopupSelect/basePopupSelect.css"
+        },
+        "basePopupSelect": {
+            "uri": "/static/ddui/js/widget_basePopupSelect.js",
+            "type": "js",
+            "deps": [
+                "myTool",
+                "static/widget/basePopupSelect/basePopupSelect.css"
+            ],
+            "id": "basePopupSelect"
+        },
+        "static/widget/gridview/gridview.css": {
+            "uri": "/static/widget/gridview/gridview.css",
+            "type": "css",
+            "pkg": "p0"
+        },
+        "gridview": {
+            "uri": "/static/ddui/js/widget_gridview.js",
+            "type": "js",
+            "deps": [
+                "page",
+                "static/widget/gridview/gridview.css"
+            ]
+        },
+        "static/widget/navTree/navTree.css": {
+            "uri": "/static/widget/navTree/navTree.css",
+            "type": "css",
+            "pkg": "p0",
+            "id": "static/widget/navTree/navTree.css"
+        },
+        "navTree": {
+            "uri": "/static/ddui/js/widget_navTree.js",
+            "type": "js",
+            "deps": [
+                "static/widget/navTree/navTree.css"
+            ],
+            "id": "navTree"
+        }
+    },
+    "pkg": {
+        "p0": {
+            "uri": "/static/ddui/css/didi_UI.css",
+            "type": "css",
+            "has": [
+                "static/css/dd_base.css",
+                "static/widget/banner/banner.css",
+                "static/widget/basePopupSelect/basePopupSelect.css",
+                "static/widget/gridview/gridview.css",
+                "static/widget/navTree/navTree.css"
+            ]
+        }
+    }
+}

@@ -41,7 +41,7 @@ fis.config.merge({
 });
 
 	fis.config.set('pack', {
-		'/static/css/didi_UI.css' : ['**/dd_base.css',/widget\/.*\.css/i]
+		'/static/ddui/css/didi_UI.css' : ['**/dd_base.css',/widget\/.*\.css/i]
 	});
 	
 
@@ -51,22 +51,26 @@ fis.config.set('roadmap.path', [
 			reg : /widget\/([^\/]+)\/\1\.(js)$/i,
 			isMod : true,
 			id : '$1',
-			useHash : true
-		}, {
+			useHash : true,
+			release : '/static\/ddui\/js\/widget_$1\.js'
+		}, 
+		{
 			reg : /widget\/(.*)\.(js)$/i,
 			isMod : true,
 			id : '$1',
-			useHash : true
+			useHash : true,
+			release : '/static\/ddui\/js\/widget_$1\.js'
 		},
 		{
-			reg : /libs/i,
+			reg : /libs\/(.*)/i,
 			useCompile : false,
 			useHash : false,
-			 isMod : false
+			 isMod : false,
+			 release:'/static\/ddui\/$1'
 		},
 		{
 			reg : /static\/css\/([^.]+)\.css$/i,
-			release : '/static\/css\/$1\.css'
+			release : '/static\/ddui/css\/$1\.css'
 		},
 
 		// 标记 isMod 为 true, 这样，在 modules 里面的满足 commonjs 规范的 js 会自动包装成 amd js, 以至于能在浏览器中运行。
@@ -75,7 +79,7 @@ fis.config.set('roadmap.path', [
 			reg : /^\/static\/js\/([^\/]+)\/([^.]+)\.js$/i,
 			isMod : true,
 			id : "$2",
-			release : '/static\/js\/$1/\$2\.js'
+			release : '/static\/ddui\/js\/$1_$2\.js'
 		}
 	]);
 	// fis release -m -p -d  D:\xampp\htdocs\didiui

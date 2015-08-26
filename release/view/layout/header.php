@@ -3,13 +3,13 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>BI管理系统</title>
-    <link type="text/css" rel="stylesheet" href="/static/css/didi_UI.css">
-<script type="text/javascript" charset="utf-8" src="/static/libs/vue.js"></script>
+    <link type="text/css" rel="stylesheet" href="/static/ddui/css/didi_UI.css">
+<script type="text/javascript" charset="utf-8" src="/static/ddui/vue.js"></script>
 <!--
     <script type="text/javascript" charset="utf-8" src="/static/libs/vue.min.js"></script>
     -->
-    <script type="text/javascript" charset="utf-8" src="/static/libs/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="/static/libs/mod.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/static/ddui/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="/static/ddui/mod.js"></script>
 </head>
 <body>
 <!--
@@ -29,7 +29,7 @@
         <navtree-component > </navtree-component>
     </div>
     <script src="/api/navTree.txt"></script>
-    <script type="text/javascript" charset="utf-8" src="/static/widget/navTree/navTree.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/static/ddui/js/widget_navTree.js"></script>
 <script>
        var navTree = require("navTree");
        navTree.init({data:bannerData});

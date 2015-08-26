@@ -54,7 +54,7 @@ var o = {}
 				if(ownEvent){
 					myEvent.trigger(this,ownEvent);
 				}				
-    			//$(this).trigger("blur");
+    			$(this).trigger("blur");
     			return false;
     		}
     	});

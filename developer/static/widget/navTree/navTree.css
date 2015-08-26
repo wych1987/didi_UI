@@ -7,7 +7,7 @@
     display: inline-block;}
 .ddui-page-title{overflow: hidden;height:inherit;line-height: 90px;padding-left: 50px;font-size: 30px;background: #fff;}
 .ddui-nav-wrap{display: flex;}
-.ddui-navtree-box{width:100px;background: #363b3f;padding: 0;min-height: calc(100vh - 91px);
+.ddui-navtree-box{width:100px;background: #363b3f;padding: 0;min-height:100vh;
     box-sizing: border-box;}
 .ddui-navtree-box .iconfont{
       font-size: 24px;
@@ -112,4 +112,7 @@
     margin: 0 0 0 -1px;
 }
 .ddui-toggle-trunk .ddui-navtree-branch{display: none;}
+.ddui-navtree-trunk  a:hover {
+    color: #ff8c03;
+}
 
