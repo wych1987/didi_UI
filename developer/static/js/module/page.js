@@ -44,6 +44,7 @@
         if(param.total&&param.index!=param.total){
             html+='<li class="page-btn" i="'+(param.index-0+1)+'">下一页</li>';
         }
+        html = '<ol class="ep-pages">'+html+'</ol>'
         param.dom.html?param.dom.html(html): param.dom.innerHTML = html;
     };
     function getPageItem(className,i){

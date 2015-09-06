@@ -202,7 +202,7 @@ function setOption(param){
 			popupSelect_vue[key]=param[key];
 		}
 	}
-	if(!popupSelect_vue.showGroup){
+	if(!popupSelect_vue.showGroup&&popupSelect_vue.group[0]){
 		popupSelect_vue.showGroup=popupSelect_vue.group[0].name;
 	}
 	popupSelect_vue.type=param.type||"radio";

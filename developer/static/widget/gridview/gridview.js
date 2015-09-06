@@ -30,7 +30,8 @@ function createTbodyTpl(tbody,tool){
 function initGridViewComponent(tbody,tool){
 	var h = createTbodyTpl(tbody,tool);
 	var tpl = gridviewTpl.replace("{{tbody}}",h);
-	Vue.component('gridview-component', {
+    /*
+var table = 	Vue.extend('gridview', {
 		inherit: true,
 		 replace:true,
 	  	template:  tpl,
@@ -44,7 +45,21 @@ function initGridViewComponent(tbody,tool){
 			}
 		}
 	});
-	 
+	*/
+	return {
+        inherit: true,
+        replace:true,
+        template:  tpl,
+        methods:{
+            viewClick:function(v,event){
+                var target = event.target;
+                while(target.nodeName.toLowerCase()!=="a"){
+                    target = target.parentNode;
+                }
+                this.$dispatch('viewClick', target,v)
+            }
+        }
+    };
 }
 
 /*
@@ -67,9 +82,9 @@ var gridviewData=[
 ]
 */
 function init(param){
-	initGridViewComponent(param.tbody,param.tool);
+    var template = 	initGridViewComponent(param.tbody,param.tool);
 	var g = {};
-	 var gridview_vue=createGridView(param);
+	 var gridview_vue=createGridView(param,template);
 	 g.gridview_vue=gridview_vue;
 	 g.url = param.url;
 	 g.param=param.param;//ajax的参数
@@ -83,22 +98,28 @@ function init(param){
 	 pageClick(g);
 	 return g;
 }
-function createGridView(conf){
-	var gridview_vue = new Vue({
-	  el: conf.id,
-	  data: {
-	  	grid:{
-	  	 thead:formatTplData(conf.thead),
-	  	 data:[] 
-	  	}
-	}
-});
-	if(conf.viewClick&&typeof conf.viewClick==="function"){
-		gridview_vue.$on("viewClick",function(target,v){
-				 conf.viewClick(target,v);
-			})
-	}
-	return gridview_vue;
+function createGridView(conf, template) {
+    console.log(JSON.stringify(template));
+    var gridview_vue = new Vue({
+        el: conf.id,
+        data: {
+            grid: {
+                thead: formatTplData(conf.thead),
+                data: []
+            },
+            isHide:conf.isHide||false
+        },
+        components: {
+            'gridviewComponent': template
+
+        }
+    });
+    if (conf.viewClick && typeof conf.viewClick === "function") {
+        gridview_vue.$on("viewClick", function (target, v) {
+            conf.viewClick(target, v);
+        })
+    }
+    return gridview_vue;
 }
 function changeData(param){
 	this.param = param;

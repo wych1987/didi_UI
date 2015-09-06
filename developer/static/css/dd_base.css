@@ -385,3 +385,49 @@ dui-tab
     line-height: 30px;
     vertical-align: middle;
 :}
+/*page*/
+.page-box {
+    margin: 25px 0 0 0;
+}
+.ep-pages {
+    height: 30px;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    width: 740px;
+    margin: 0 auto;
+    font-size: 12px;
+}
+.ep-pages li, .ep-pages a,.ep-pages span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0 5px 0 0;
+    background: #ff7f01;
+    cursor: pointer;
+    text-decoration: none;
+    color:#fff;
+}
+.ep-pages li:hover, .ep-pages a:hover {
+    color: #000;
+    background: #d7d7d7;
+}
+.ep-pages .page-action, .ep-pages .page-action a {
+    background: #d7d7d7;
+    color: #000;
+}
+.ep-pages .page-action:hover, .ep-pages .page-action a:hover {
+    cursor: text;
+}
+.ep-pages .page-btn, .page-btn a {
+    width: 75px;
+    background: #ff7f01;
+}
+.ep-pages .ep-pages-disabled {
+    background: #d7d7d7;
+    cursor: text;
+}
+.ep-pages .ep-pages-disabled:hover {
+    color: #fff;
+    background: #e5e5e5;
+}

@@ -41,7 +41,7 @@ fis.config.merge({
 });
 
 	fis.config.set('pack', {
-		'/static/ddui/css/didi_UI.css' : ['**/dd_base.css',/widget\/.*\.css/i]
+		'/static/ddui/css/didi_UI.css' : ['**/dd_base.css','**/filter.css',/widget\/.*\.css/i]
 	});
 	
 
