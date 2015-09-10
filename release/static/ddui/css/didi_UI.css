@@ -841,11 +841,32 @@ a.ddui-form-btn-01:hover{color:#fff;}
     right:-30px;
 }
 .ddui-navtree-trunk-hide{
-    width:0;
-    margin: 0 0 0 -1px;
+    width: 0;
+    border-right: 0 none;
 }
 .ddui-toggle-trunk .ddui-navtree-branch{display: none;}
-.ddui-navtree-trunk  a:hover {
-    color: #ff8c03;
+.ddui-search-box{
+    margin:25px 0 0 55px;
+    height:40px;
+    line-height: 40px;
 }
+.ddui-search-input{
+    width:422px;height: 40px;border:0 none;background-color: #f5f5f5;padding:0 0 0 15px;font-size: 14px;box-sizing:border-box;vertical-align: middle;
+    color:#aaa;
+}
+.ddui-search-btn{
+    width: 46px;
+    height: 40px;
+    border: 0 none;
+    background-color: #CCC;
+    display: inline-block;
+    margin: 0 0 0 -5px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+.ddui-search-btn:hover{background-color: #999;}
+.ddui-search-btn .ddui-font-sousuo{color:#fff;font-size: 20px;}
+.ddui-logo .ddui-font-didi-bi{font-size: 65px;height: 90px;      line-height: 90px;}
+
 
