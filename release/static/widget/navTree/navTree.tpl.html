@@ -1,0 +1,47 @@
+    <ul class="ddui-navtree-box">
+        <li  v-repeat="nav:navtree" v-class="ddui-navtree-active:nav.is_active" v-on="click:treeClick(nav)">
+            <dl>
+                <dt class="ddui-icon-navtree"><i class="iconfont" v-class="nav.iconClass"></i></dt>
+                <dd class="ddui-navtree-title01">
+                    <template v-if="nav.url">
+                        <a href="{{nav.url}}" target="{{targetType}}">{{nav.name}}</a>
+                    </template>
+                    <template v-if="!nav.url">
+                        {{nav.name}}
+                    </template>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <ul class="ddui-navtree-trunk-list" v-class="ddui-navtree-trunk-hide:trunkClose">
+        <li class="ddui-navtree-trunk " v-repeat="navTrunk:showTrunk" >
+                <h3 class="ddui-navtree-trunk-title" v-class="ddui-nav-active:navTrunk.is_active" v-on="click:trunkClick($event)">
+                    <template v-if="navTrunk.url">
+                        <a href="{{navTrunk.url}}" target="{{targetType}}">
+                            <i class="iconfont ddui-icon-trunk-item " v-class="navTrunk.iconClass"></i><span>{{navTrunk.name}}</span>
+                        </a>
+                    </template>
+                     <template v-if="!navTrunk.url">
+                            <i class="iconfont ddui-icon-trunk-item" v-class="navTrunk.iconClass"></i><span>{{navTrunk.name}}</span>
+                    </template>
+                </h3>
+                <div class="ddui-navtree-branch" v-repeat="menu:navTrunk.menu">
+                    <h3 class="ddui-navtree-leaf-title" v-on="click:leafClick(menu)" v-class="ddui-nav-active:menu.is_active">
+                        <template       v-if="menu.url">
+                            <a href="{{menu.url}}" target="{{targetType}}">
+                                <i class="iconfont ddui-icon-trunk-item ddui-font-dayuhao"></i><span>{{menu.name}}</span>
+                            </a>
+                        </template>
+                        <template v-if="!menu.url">
+                            <i class="iconfont ddui-icon-trunk-item ddui-font-dayuhao"></i><span>{{menu.name}}</span>
+                        </template>
+                    </h3>
+                    <div class="ddui-navtree-leaf-list" v-if="menu.menu.length" v-class="hide:!menu.is_active">
+                        <a href="{{leaf.url}}"  target="{{targetType}}" v-repeat="leaf:menu.menu" v-class="ddui-nav-active:leaf.is_active">{{leaf.name}}</a>
+                    </div>
+                </div>
+        </li>
+    </ul>
+    <div class="ddui-nav-trunk-close" v-on="click:trunkCloseClick" v-class="ddui-nav-close-active:trunkClose,hide:!showTrunk.length">
+        <i class="iconfont ddui-font-zuosanjiao"></i>
+    </div>
