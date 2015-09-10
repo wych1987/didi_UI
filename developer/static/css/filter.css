@@ -2,14 +2,14 @@
 .page-wrap{
         padding: 30px 0 0 50px;
 }
-.page-title01{
+.ddui-page-title01{
    font-size: 16px;
   height: 16px;
   line-height: 16px;
   vertical-align: top;
   font-weight: 700;
 }
-.page-title01:before{
+.ddui-page-title01:before{
     content: " ";display: inline-block;width:5px;height:inherit;background-color: #ff8c03;margin-right: 5px;
 }
 /*搜索表单的相关样式，ex：实时业务监控*/
@@ -34,10 +34,10 @@
 .ddui-orange-legend{background-color: #ffbd66;}
 .ddui-red-legend{background-color: #ff6c6c;}
 .ddui-green-legend{background-color: #95e257;}
-.ddui-data-info-tips{position: absolute;right: 0;top: 0;}
+.ddui-data-info-tips{position: absolute;right: 10%;top: 0;}
 .ddui-date-input-item-box{display: inline-block;    margin: 0 0 0 10px;}
 /*form样式*/
-/* 营销管理页面相关的样式*/
+ 
 .form-box{padding: 50px;border: 1px solid #E1E1E1;}
 
 .form-title01{height:20px;font-size: 20px;font-weight: 500;line-height: 20px;padding-bottom: 20px;border-bottom: 1px solid #e6e6e6;margin:0;}
@@ -186,3 +186,11 @@ a.ddui-form-btn-01:hover{color:#fff;}
     padding: 0 10px 0 0;
     box-sizing: border-box;
     text-align: center; }
+.ddui-search-box{
+    margin:25px 0 0 55px;
+    height:40px;
+    line-height: 40px;
+}
+.ddui-search-input{
+    width:422px;height: 40px;border:0 none;
+}

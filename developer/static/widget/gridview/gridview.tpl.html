@@ -1,10 +1,18 @@
 
 		<table border-space="0" class="ddui-gridview-table" >
 			<thead >
-				<tr>
-				<td v-repeat="thead:grid.thead" ><div v-class="'ddui-thead'+$index" class="{{thead.className}}">{{thead.text}}</div></td>
+				<tr v-if="isDrap">
+				<td v-repeat="thead:grid.thead" v-on="dragstart:dragstart($event),drag:drag($event),dragend:dragend($event),"><div v-class="'ddui-thead'+$index" class="{{thead.className}}" >{{thead.text}}</div>
+				<span class="ddui-table-drag"  ></span>
+				</td>
 				<!--<td class="gridview-col-action">操作</td>-->		 
 			</tr>
+				<tr v-if="!isDrap">
+				<td v-repeat="thead:grid.thead"><div v-class="'ddui-thead'+$index" class="{{thead.className}}" >{{thead.text}}</div>
+				</td>
+				<!--<td class="gridview-col-action">操作</td>-->
+			</tr>
+
 			</thead>
 			<tbody >
 			<tr v-repeat="tr:grid.data" v-on="click:viewClick(this,$event)">

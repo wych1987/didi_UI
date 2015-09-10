@@ -101,28 +101,7 @@ ul,li{list-style: none;}
 
 
  .ddui-con-body{background-color: #fff;border-top: 2px solid #e7e7e7;}
- /*维护旧的iconfont*/
-.icon-fangda:before { content: "\e614"; }
-.icon-bianji:before { content: "\e60f"; }
-.icon-sousuo:before { content: "\e612"; }
-.icon-jiahao:before { content: "\e611"; }
-.icon-zuojiantou:before { content: "\e606"; }
-.icon-youjiantou:before { content: "\e607"; }
-.icon-loading2:before { content: "\e608"; }
-.icon-shangsanjiao:before { content: "\e609"; }
-.icon-iconfontzhexiantu:before { content: "\e60a"; }
-.icon-cha:before { content: "\e60b"; }
-.icon-icsanjiaoxia:before { content: "\e60c"; }
-.icon-tongjitu:before { content: "\e60d"; }
-.icon-zhexiantu:before { content: "\e60e"; }
-.icon-dingdan0:before { content: "\e601"; }
-.icon-wujiaoxing:before { content: "\e600"; }
-.icon-zhuzhuangtu:before { content: "\e602"; }
-.icon-quanbuwenshufuzhi:before { content: "\e610"; }
-.icon-shixinxinxing:before { content: "\e603"; }
-.icon-tishi:before { content: "\e613"; }
-.icon-iconfontpingmufangda:before { content: "\e604"; }
-.icon-iconfontpingmusuoxiao:before { content: "\e605"; }
+  
 /*设置icon-size 保持大小一致*/
 .iconfont.icon-dingdan0{font-size: 45px;}
 .iconfont.icon-zhuzhuangtu{font-size: 30px;}
@@ -371,23 +350,20 @@ dui-tab
 .ddui-tab-list li{height:27px;line-height:27px;border:1px solid #f0f0f0;border-top-left-radius: 3px;border-top-right-radius:3px;border-bottom: 0 none;min-width: 108px;display: inline-block;margin-right: 5px;text-align: center;cursor: pointer; }
 .ddui-tab-list li.ddui-tab-active,.ddui-tab-list li:hover{ background: #f5f5f5;}
 
-/*营销管理平台css*/
-.oper-list{margin-top:30px; font-size: 12px;}
-.oper-row{min-height:40px;margin-bottom: 15px;}
-.oper-row .customer-box,.oper-row .oper-type-box{line-height: 30px;;display: inline-block;margin-right: 5px;height: inherit;background: #f5f5f5;padding:5px;box-sizing: border-box;}
-.oper-row .oper-type-box{background: #fff;}
-.oper-field{
-    height: 30px;
-    border: 1px solid #e6e6e6;
-    box-sizing: border-box;
-    display: inline-block;
-    background-color: #fff;
-    line-height: 30px;
-    vertical-align: middle;
-:}
-/*page*/
-.page-box {
-    margin: 25px 0 0 0;
+ 
+
+.ddui-gridview{
+	margin-top:20px;
+}
+
+.ddui-page-title01{
+    font-size: 16px;
+    height: 20px;
+    line-height: 20px;
+    font-weight: 700;
+}
+.ddui-page-title01:before{
+    content: " ";float:left;width:5px;height:inherit;background-color: #ff8c03;margin-right: 5px;
 }
 .ep-pages {
     height: 30px;
@@ -398,6 +374,7 @@ dui-tab
     margin: 0 auto;
     font-size: 12px;
 }
+.ep-pages li{list-style: none}
 .ep-pages li, .ep-pages a,.ep-pages span {
     display: inline-block;
     width: 30px;
@@ -406,7 +383,7 @@ dui-tab
     background: #ff7f01;
     cursor: pointer;
     text-decoration: none;
-    color:#fff;
+	color:#fff;
 }
 .ep-pages li:hover, .ep-pages a:hover {
     color: #000;
@@ -431,3 +408,4 @@ dui-tab
     color: #fff;
     background: #e5e5e5;
 }
+	

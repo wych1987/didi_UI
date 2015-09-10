@@ -8,7 +8,10 @@ var tool_obj = {
 }
 var gridviewTpl=__inline("gridview.tpl.html")
 
-
+var mouse_x=0;
+$(document).on("mouseup",function(){
+    mouse_x=0;
+})
 /*
 写个for循环拼接字符串
 */
@@ -28,25 +31,9 @@ function createTbodyTpl(tbody,tool){
 	return h;
 }
 function initGridViewComponent(tbody,tool){
-	var h = createTbodyTpl(tbody,tool);
-	var tpl = gridviewTpl.replace("{{tbody}}",h);
-    /*
-var table = 	Vue.extend('gridview', {
-		inherit: true,
-		 replace:true,
-	  	template:  tpl,
-		methods:{
-			viewClick:function(v,event){
-				var target = event.target;
-				while(target.nodeName.toLowerCase()!=="a"){
-					target = target.parentNode;
-				}
-				 this.$dispatch('viewClick', target,v)
-			}
-		}
-	});
-	*/
-	return {
+    var h = createTbodyTpl(tbody,tool);
+    var tpl = gridviewTpl.replace("{{tbody}}",h);
+    return {
         inherit: true,
         replace:true,
         template:  tpl,
@@ -57,6 +44,17 @@ var table = 	Vue.extend('gridview', {
                     target = target.parentNode;
                 }
                 this.$dispatch('viewClick', target,v)
+            },
+            drag:function(event){
+                var target = event.target;
+                this.$dispatch('drag', target,event)
+            },
+            dragstart:function(e){
+                this.$dispatch('dragstart',e);
+            },
+            dragend:function(e){
+                var target = event.target;
+                this.$dispatch('dragend', target,e);
             }
         }
     };
@@ -99,7 +97,6 @@ function init(param){
 	 return g;
 }
 function createGridView(conf, template) {
-    console.log(JSON.stringify(template));
     var gridview_vue = new Vue({
         el: conf.id,
         data: {
@@ -107,11 +104,31 @@ function createGridView(conf, template) {
                 thead: formatTplData(conf.thead),
                 data: []
             },
-            isHide:conf.isHide||false
+            isHide:conf.isHide||false,
+            isDrap:conf.isDrap||false,
         },
         components: {
             'gridviewComponent': template
 
+        },
+        created:function(){
+            this.$on("drag",function(ele,e){
+
+            });
+            this.$on("dragstart",function(e){
+                mouse_x=e.clientX;
+            });
+            this.$on("dragend",function(ele,e){
+                ele =$(ele).prev("div");
+                var w = ele.width()-0;
+                var x = e.clientX-mouse_x;
+                console.log("x="+x);
+                console.log("w=="+w)
+                console.log("www="+w+x);
+                //if(x>5){
+                ele.width((w+x)+"px");
+                mouse_x=0;
+            });
         }
     });
     if (conf.viewClick && typeof conf.viewClick === "function") {

@@ -8,6 +8,7 @@
 .ddui-gridview-table, .ddui-gridview-table td, .ddui-gridview-table th {
     border: 1px solid #e2e2e2;
     text-align: center;
+    position: relative;
 }
 .ddui-gridview-table thead {
     background: #f4f3f3;
@@ -19,7 +20,8 @@
 .ddui-gridview-table tr {
     height: 32px;
     line-height: 32px;
-	
+    word-break: break-all;
+    word-wrap: break-word;
 }
 .ddui-gridview-box .ddui-th-title01 {
     min-width: 40px;
@@ -41,3 +43,12 @@
     height: 30px;
 }
 .ddui-action-item{display: inline-block;margin-right: 30px;cursor: pointer;}
+.ddui-gridview-table thead div{min-width:80px;line-height:1;}
+.ddui-gridview-table .ddui-table-drag{
+    position: absolute;
+    cursor: ew-resize;
+    width: 4px;
+    height: 100%;
+    top: 0;
+    right: 0;
+}
