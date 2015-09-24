@@ -52,3 +52,5 @@
     top: 0;
     right: 0;
 }
+.ddui-gridview-title a{color:#ff8903}
+.ddui-gridview-title{max-height:2.5em;line-height: 1.2em;overflow: hidden;}

@@ -47,21 +47,34 @@ function formatNavtreeData(data) {
         var k = b[key];
         if (b[k.pid] !== undefined) {
             if (k.url&&URL === k.url) {
-                    k.is_active = true;
-                    var pid = k.pid;
-                    while(b[pid]){
-                        b[pid].is_active=true;
-                        active_id = b[pid].id;
-                        pid = b[pid].pid;
-                    }
+                k.is_active = true;
+                var pid = k.pid;
+                while(b[pid]){
+                    b[pid].is_active=true;
+                    active_id = b[pid].id;
+                    pid = b[pid].pid;
                 }
+            }
             b[k.pid].menu.push(k);
+            if(b[k.pid].sort_val !==undefined){
+                b[k.pid].menu.sort(function(a1,a2){
+                    return a1.sort_val - a2.sort_val;
+                })
+            }
         } else if (k.pid != 0) {
             delete b[key];
         }
+
+
     }
     allTree = JSON.parse(JSON.stringify(b));
     var showTrunk=b[active_id]?b[active_id].menu:[];
+    if(tree[0].sort_val !==undefined){
+        tree.sort(function(a1,a2){
+            return a1.sort_val - a2.sort_val;
+        })
+        tree
+    }
     return {tree:tree,showTrunk:showTrunk};
 }
 function createNavTree(navData,targetType){

@@ -226,6 +226,13 @@ table {
     line-height: 26px;
     margin: 0;
 }
+.ddui-btn04 {
+    padding: 0 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    height: 28px;
+    line-height: 28px;
+}
 /*jquery-ui 自动填充的css巴拉过来*/
 .ui-autocomplete {
     position: absolute;

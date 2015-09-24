@@ -14,7 +14,7 @@
         param.index=param.index-0;
         param.total=param.total-0;
         if(param.index>1){
-            html+='<li class="page-btn" i="'+(param.index-1)+'">上一页</li>';
+            html+='<li i = "1">首页</li><li class="page-btn" i="'+(param.index-1)+'">上一页</li>';
         }
         if(param.total<=pageNum){//总页码小于pageNum的情况
             for(var i = 1 ; i <=param.total;i++){
@@ -42,7 +42,7 @@
             }
         }
         if(param.total&&param.index!=param.total){
-            html+='<li class="page-btn" i="'+(param.index-0+1)+'">下一页</li>';
+            html+='<li class="page-btn" i="'+(param.index-0+1)+'">下一页</li><li i = "'+(param.total)+'">尾页</li>';
         }
         html = '<ol class="ep-pages">'+html+'</ol>'
         param.dom.html?param.dom.html(html): param.dom.innerHTML = html;

@@ -118,17 +118,14 @@ function createGridView(conf, template) {
             this.$on("dragstart",function(e){
                 mouse_x=e.clientX;
             });
-            this.$on("dragend",function(ele,e){
-                ele =$(ele).prev("div");
-                var w = ele.width()-0;
-                var x = e.clientX-mouse_x;
-                console.log("x="+x);
-                console.log("w=="+w)
-                console.log("www="+w+x);
-                //if(x>5){
-                ele.width((w+x)+"px");
-                mouse_x=0;
-            });
+			this.$on("dragend",function(ele,e){
+				// ele =$(ele).prev("td");
+				var elem =$(e.currentTarget);
+				var w = elem.width()-0;
+				var x = e.clientX-mouse_x;
+				elem.width((w+x)+"px");
+				mouse_x=0;
+			});
         }
     });
     if (conf.viewClick && typeof conf.viewClick === "function") {
